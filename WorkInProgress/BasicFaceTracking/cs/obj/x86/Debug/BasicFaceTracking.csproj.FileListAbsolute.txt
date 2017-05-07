@@ -1,0 +1,617 @@
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\App.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\MainPage.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\Scenario1_TrackInWebcam.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\Styles\Styles.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\BasicFaceTracking.xr.xml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\BasicFaceTracking.exe
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\BasicFaceTracking.pdb
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\resources.pri
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\AppxManifest.xml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\Core\AppxManifest.xml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\Core\BasicFaceTracking.exe
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\BasicFaceTracking.build.appxrecipe
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\Microsoft.CSharp.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ComponentModel.DataAnnotations.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Core.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Numerics.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Serialization.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Web.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Windows.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.Linq.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.Serialization.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\Microsoft.VisualBasic.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.AppContext.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.Concurrent.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.Immutable.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.NonGeneric.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.Specialized.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ComponentModel.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ComponentModel.EventBasedAsync.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Data.Common.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.Contracts.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.Debug.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.Tools.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.Tracing.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Dynamic.Runtime.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Globalization.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Globalization.Calendars.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Globalization.Extensions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.Compression.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\ClrCompression.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.FileSystem.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.IsolatedStorage.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.UnmanagedMemoryStream.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Linq.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Linq.Expressions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Linq.Parallel.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Linq.Queryable.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Http.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Http.Rtc.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.NetworkInformation.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Primitives.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Requests.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Sockets.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.WebHeaderCollection.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Numerics.Vectors.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Numerics.Vectors.WindowsRuntime.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ObjectModel.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Private.DataContractSerialization.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Private.Networking.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Private.ServiceModel.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Private.Uri.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Context.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.DispatchProxy.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Emit.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Emit.ILGeneration.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Emit.Lightweight.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Extensions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Metadata.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Primitives.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.TypeExtensions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Resources.ResourceManager.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Extensions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Handles.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.InteropServices.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Numerics.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Serialization.Json.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Serialization.Xml.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.WindowsRuntime.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.WindowsRuntime.UI.Xaml.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Security.Claims.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Security.Principal.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Duplex.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Http.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.NetTcp.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Primitives.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Security.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Text.Encoding.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Text.Encoding.Extensions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Text.RegularExpressions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Overlapped.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Tasks.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Tasks.Parallel.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Timer.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.ReaderWriter.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.XDocument.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.XmlDocument.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.XmlSerializer.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.csprojResolveAssemblyReference.cache
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\App.g.i.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\App.g.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\MainPage.g.i.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\MainPage.g.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.g.i.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.g.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\XamlTypeInfo.g.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\App.xaml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\MainPage.xaml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.xaml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\Styles\Styles.xaml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\App.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\MainPage.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\Styles\Styles.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\XamlSaveStateFile.xml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.exe
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.pdb
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\ResourceHandlingTask.state
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.Microsoft.CSharp.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.Microsoft.VisualBasic.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.AppContext.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.Concurrent.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.Immutable.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.NonGeneric.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.Specialized.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.ComponentModel.Annotations.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.ComponentModel.EventBasedAsync.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Data.Common.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Diagnostics.Debug.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Dynamic.Runtime.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Globalization.Extensions.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.Compression.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.Compression.ZipFile.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.FileSystem.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.IsolatedStorage.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.UnmanagedMemoryStream.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Linq.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Linq.Expressions.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Linq.Parallel.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Linq.Queryable.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Net.Http.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Net.Requests.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Net.WebHeaderCollection.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Numerics.Vectors.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.ObjectModel.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Private.DataContractSerialization.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Private.Networking.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Private.ServiceModel.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Private.Uri.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Reflection.Context.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Reflection.DispatchProxy.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Reflection.Metadata.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.Extensions.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.InteropServices.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.Numerics.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.Serialization.Primitives.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.WindowsRuntime.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.WindowsRuntime.UI.Xaml.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Security.Claims.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Text.Encoding.CodePages.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Text.RegularExpressions.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Threading.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Threading.Overlapped.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Threading.Tasks.Dataflow.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Threading.Tasks.Parallel.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Xml.ReaderWriter.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Xml.XDocument.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Xml.XmlDocument.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Xml.XmlSerializer.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\priconfig.xml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\layout.resfiles
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\layout.resfiles.intermediate
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\resources.resfiles
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\pri.resfiles
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\qualifiers.txt
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master\Samples\BasicFaceTracking\cs\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\App.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\MainPage.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\Scenario1_TrackInWebcam.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\Styles\Styles.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\BasicFaceTracking.xr.xml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\BasicFaceTracking.exe
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\BasicFaceTracking.pdb
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\resources.pri
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\AppxManifest.xml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\Core\AppxManifest.xml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\Core\BasicFaceTracking.exe
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\BasicFaceTracking.build.appxrecipe
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\Microsoft.CSharp.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ComponentModel.DataAnnotations.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Core.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Numerics.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Serialization.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Web.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Windows.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.Linq.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.Serialization.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\Microsoft.VisualBasic.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.AppContext.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.Concurrent.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.Immutable.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.NonGeneric.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.Specialized.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ComponentModel.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ComponentModel.EventBasedAsync.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Data.Common.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.Contracts.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.Debug.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.Tools.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.Tracing.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Dynamic.Runtime.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Globalization.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Globalization.Calendars.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Globalization.Extensions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.Compression.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\ClrCompression.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.FileSystem.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.IsolatedStorage.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.IO.UnmanagedMemoryStream.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Linq.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Linq.Expressions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Linq.Parallel.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Linq.Queryable.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Http.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Http.Rtc.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.NetworkInformation.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Primitives.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Requests.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Sockets.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Net.WebHeaderCollection.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Numerics.Vectors.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Numerics.Vectors.WindowsRuntime.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ObjectModel.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Private.DataContractSerialization.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Private.Networking.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Private.ServiceModel.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Private.Uri.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Context.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.DispatchProxy.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Emit.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Emit.ILGeneration.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Emit.Lightweight.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Extensions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Metadata.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Primitives.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.TypeExtensions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Resources.ResourceManager.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Extensions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Handles.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.InteropServices.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Numerics.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Serialization.Json.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Serialization.Xml.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.WindowsRuntime.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.WindowsRuntime.UI.Xaml.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Security.Claims.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Security.Principal.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Duplex.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Http.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.NetTcp.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Primitives.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Security.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Text.Encoding.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Text.Encoding.Extensions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Text.RegularExpressions.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Overlapped.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Tasks.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Tasks.Parallel.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Timer.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.ReaderWriter.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.XDocument.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.XmlDocument.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.XmlSerializer.dll
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.csprojResolveAssemblyReference.cache
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\App.g.i.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\App.g.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\MainPage.g.i.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\MainPage.g.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.g.i.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.g.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\XamlTypeInfo.g.cs
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\App.xaml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.xaml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\Styles\Styles.xaml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\MainPage.xaml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\App.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\Styles\Styles.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\MainPage.xbf
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\XamlSaveStateFile.xml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.exe
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.pdb
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\ResourceHandlingTask.state
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.Microsoft.CSharp.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.Microsoft.VisualBasic.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.AppContext.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.Concurrent.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.Immutable.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.NonGeneric.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.Specialized.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.ComponentModel.Annotations.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.ComponentModel.EventBasedAsync.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Data.Common.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Diagnostics.Debug.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Dynamic.Runtime.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Globalization.Extensions.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.Compression.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.Compression.ZipFile.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.FileSystem.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.IsolatedStorage.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.UnmanagedMemoryStream.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Linq.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Linq.Expressions.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Linq.Parallel.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Linq.Queryable.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Net.Http.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Net.Requests.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Net.WebHeaderCollection.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Numerics.Vectors.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.ObjectModel.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Private.DataContractSerialization.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Private.Networking.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Private.ServiceModel.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Private.Uri.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Reflection.Context.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Reflection.DispatchProxy.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Reflection.Metadata.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.Extensions.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.InteropServices.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.Numerics.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.Serialization.Primitives.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.WindowsRuntime.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.WindowsRuntime.UI.Xaml.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Security.Claims.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Text.Encoding.CodePages.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Text.RegularExpressions.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Threading.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Threading.Overlapped.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Threading.Tasks.Dataflow.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Threading.Tasks.Parallel.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Xml.ReaderWriter.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Xml.XDocument.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Xml.XmlDocument.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Xml.XmlSerializer.SR.resw
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\priconfig.xml
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\layout.resfiles
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\layout.resfiles.intermediate
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\resources.resfiles
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\pri.resfiles
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\qualifiers.txt
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Oana\Dropbox\uni\Master\2017SS\VR_Advanced_Topics\Windows-universal-samples-master - Copy\Samples\BasicFaceTracking\cs\obj\x86\Debug\ProjectArchitectures.txt
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.csprojResolveAssemblyReference.cache
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\App.g.i.cs
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\App.g.cs
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\MainPage.g.i.cs
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\MainPage.g.cs
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.g.i.cs
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.g.cs
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\App.xaml
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\MainPage.xaml
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.xaml
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\Styles\Styles.xaml
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\App.xbf
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\MainPage.xbf
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.xbf
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\Styles\Styles.xbf
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.exe
+D:\Uni_Master_SS2017\vr_advTop\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.pdb
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\App.xbf
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\MainPage.xbf
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\Scenario1_TrackInWebcam.xbf
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\Styles\Styles.xbf
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\BasicFaceTracking.xr.xml
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\BasicFaceTracking.exe
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\BasicFaceTracking.pdb
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\resources.pri
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\AppxManifest.xml
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\Core\AppxManifest.xml
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\Core\BasicFaceTracking.exe
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\BasicFaceTracking.build.appxrecipe
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\Microsoft.CSharp.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.ComponentModel.DataAnnotations.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Core.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Net.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Numerics.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Serialization.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Web.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Windows.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.Linq.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.Serialization.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\Microsoft.VisualBasic.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\Microsoft.Win32.Primitives.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.AppContext.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.Concurrent.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.Immutable.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.NonGeneric.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.Specialized.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.ComponentModel.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.ComponentModel.Annotations.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.ComponentModel.EventBasedAsync.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Data.Common.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.Contracts.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.Debug.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.StackTrace.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.Tools.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Diagnostics.Tracing.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Dynamic.Runtime.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Globalization.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Globalization.Calendars.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Globalization.Extensions.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.IO.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.IO.Compression.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\ClrCompression.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.IO.Compression.ZipFile.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.IO.FileSystem.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.IO.FileSystem.Primitives.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.IO.IsolatedStorage.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.IO.UnmanagedMemoryStream.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Linq.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Linq.Expressions.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Linq.Parallel.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Linq.Queryable.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Http.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Http.Rtc.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Net.NetworkInformation.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Primitives.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Requests.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Net.Sockets.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Net.WebHeaderCollection.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Numerics.Vectors.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Numerics.Vectors.WindowsRuntime.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.ObjectModel.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Private.DataContractSerialization.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Private.Networking.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Private.ServiceModel.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Private.Uri.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Context.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.DispatchProxy.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Emit.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Emit.ILGeneration.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Emit.Lightweight.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Extensions.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Metadata.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.Primitives.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Reflection.TypeExtensions.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Resources.ResourceManager.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Extensions.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Handles.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.InteropServices.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.InteropServices.WindowsRuntime.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Numerics.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Serialization.Json.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Serialization.Primitives.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.Serialization.Xml.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.WindowsRuntime.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Runtime.WindowsRuntime.UI.Xaml.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Security.Claims.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Security.Principal.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Duplex.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Http.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.NetTcp.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Primitives.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.ServiceModel.Security.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Text.Encoding.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Text.Encoding.CodePages.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Text.Encoding.Extensions.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Text.RegularExpressions.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Overlapped.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Tasks.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Tasks.Dataflow.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Tasks.Parallel.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Threading.Timer.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.ReaderWriter.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.XDocument.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.XmlDocument.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.XmlSerializer.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.csprojResolveAssemblyReference.cache
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\App.g.i.cs
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\App.g.cs
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\MainPage.g.i.cs
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\MainPage.g.cs
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.g.i.cs
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.g.cs
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\XamlTypeInfo.g.cs
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\App.xaml
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\MainPage.xaml
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.xaml
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\Styles\Styles.xaml
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\App.xbf
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\MainPage.xbf
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\Scenario1_TrackInWebcam.xbf
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\Styles\Styles.xbf
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\XamlSaveStateFile.xml
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.exe
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.pdb
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\ResourceHandlingTask.state
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.Microsoft.CSharp.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.Microsoft.VisualBasic.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.AppContext.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.Concurrent.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.Immutable.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.NonGeneric.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Collections.Specialized.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.ComponentModel.Annotations.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.ComponentModel.EventBasedAsync.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Data.Common.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Diagnostics.Debug.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Dynamic.Runtime.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Globalization.Extensions.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.Compression.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.Compression.ZipFile.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.FileSystem.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.IsolatedStorage.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.IO.UnmanagedMemoryStream.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Linq.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Linq.Expressions.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Linq.Parallel.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Linq.Queryable.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Net.Http.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Net.Requests.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Net.WebHeaderCollection.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Numerics.Vectors.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.ObjectModel.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Private.DataContractSerialization.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Private.Networking.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Private.ServiceModel.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Private.Uri.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Reflection.Context.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Reflection.DispatchProxy.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Reflection.Metadata.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.Extensions.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.InteropServices.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.Numerics.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.Serialization.Primitives.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.WindowsRuntime.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Runtime.WindowsRuntime.UI.Xaml.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Security.Claims.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Text.Encoding.CodePages.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Text.RegularExpressions.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Threading.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Threading.Overlapped.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Threading.Tasks.Dataflow.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Threading.Tasks.Parallel.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Xml.ReaderWriter.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Xml.XDocument.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Xml.XmlDocument.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\FxResources.System.Xml.XmlSerializer.SR.resw
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\priconfig.xml
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\priconfig.xml.intermediate
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\layout.resfiles
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\layout.resfiles.intermediate
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\resources.resfiles
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\resources.resfiles.intermediate
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\pri.resfiles
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\pri.resfiles.intermediate
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\qualifiers.txt
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\qualifiers.txt.intermediate
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\ProjectArchitectures.txt
