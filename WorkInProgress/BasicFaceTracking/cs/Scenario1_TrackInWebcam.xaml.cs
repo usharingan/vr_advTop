@@ -31,9 +31,6 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using System.IO;
-using Windows.Storage.Pickers;
-using Windows.Storage.AccessCache;
-//using System.Security.AccessControl;
 
 namespace SDKTemplate
 {
@@ -101,6 +98,8 @@ namespace SDKTemplate
         // test
         int count = 0;
 
+        private SemaphoreSlim snapshotSemaphore = new SemaphoreSlim(1);
+
         /// <summary>
         /// Constructor
         /// Initializes a new instance of the <see cref="TrackFacesInWebcam"/> class.
@@ -126,13 +125,13 @@ namespace SDKTemplate
             /// <summary>
             /// Webcam is actively engaged and a live video stream is displayed.
             /// </summary>
-            Streaming,
+            Streaming //,
 
             /// <summary>
             /// Snapshot image has been captured and is being displayed along with detected faces; webcam is not active. 
         /// -> should not be displayed tho -> do smth else -> save img as PNG?
             /// </summary>
-            Snapshot  //...
+      //      Snapshot  //...
         }
 
         /// <summary>
@@ -298,8 +297,14 @@ namespace SDKTemplate
                 const BitmapPixelFormat InputPixelFormat = BitmapPixelFormat.Nv12;
                 using (VideoFrame previewFrame = new VideoFrame(InputPixelFormat, (int)this.videoProperties.Width, (int)this.videoProperties.Height))
                 {
-                    await this.mediaCapture.GetPreviewFrameAsync(previewFrame);
-
+                    await snapshotSemaphore.WaitAsync();
+                    try
+                    {
+                        await this.mediaCapture.GetPreviewFrameAsync(previewFrame);
+                    } finally
+                    {
+                        snapshotSemaphore.Release();    
+                    }
                     // The returned VideoFrame should be in the supported NV12 format but we need to verify this.
                     if (FaceDetector.IsBitmapPixelFormatSupported(previewFrame.SoftwareBitmap.BitmapPixelFormat))
                     {
@@ -337,7 +342,6 @@ namespace SDKTemplate
      // Oana: should run in background -> take pictures -> save them, one everytime person clicks on snapshot button...
      // -> perform face detection on them but don't show it
      // TODO
-        
         /// <summary>
         /// Captures a single frame from the running webcam stream and executes the FaceDetector on the image. If successful calls SetupVisualization to display the results.
         /// </summary>
@@ -575,8 +579,8 @@ namespace SDKTemplate
             });
         }
 
-        /*
-         * /// <summary>
+        
+        /// <summary>
         /// Handles MediaCapture changes by shutting down streaming and returning to Idle state.
         /// </summary>
         /// <param name="sender">The source of the event, i.e. our MediaCapture object</param>
@@ -590,7 +594,7 @@ namespace SDKTemplate
                 ChangeScenarioState(ScenarioState.Idle);
             });
         }
-         */
+         
 
         /// <summary>
         /// Handles "streaming" button clicks to start/stop webcam streaming.
@@ -610,8 +614,7 @@ namespace SDKTemplate
                 this.ChangeScenarioState(ScenarioState.Streaming);
             }
         }
-
-        // TODO - change stuff    ?
+        
         /// <summary>
         /// Handles "snapshot" button clicks to take a snapshot or clear the current display.
         /// </summary>
@@ -621,7 +624,7 @@ namespace SDKTemplate
         {
 
             // temp
-            System.Diagnostics.Debug.WriteLine("WOW " + count++);
+            // System.Diagnostics.Debug.WriteLine("WOW " + count++);
             //test
             bool myBool = await saveToImgFile();
             // test!
@@ -720,9 +723,18 @@ namespace SDKTemplate
                 const BitmapPixelFormat InputPixelFormat = BitmapPixelFormat.Nv12;
                 using (VideoFrame previewFrame = new VideoFrame(InputPixelFormat, (int)this.videoProperties.Width, (int)this.videoProperties.Height))
                 {
-                    // has to be used in async method
-                    await this.mediaCapture.GetPreviewFrameAsync(previewFrame);
+                    await snapshotSemaphore.WaitAsync();
+                    try
+                    {
+                        // has to be used in async method
+                        await this.mediaCapture.GetPreviewFrameAsync(previewFrame);
 
+                    }
+                    finally
+                    {
+                        snapshotSemaphore.Release();
+                    }
+                    
                     // The returned VideoFrame should be in the supported NV12 format but we need to verify this.
                     if (FaceDetector.IsBitmapPixelFormatSupported(previewFrame.SoftwareBitmap.BitmapPixelFormat))
                     {
@@ -748,17 +760,18 @@ namespace SDKTemplate
                     saveImgStorageFileToFolder(myImgFile);
 
                     // temp
-                    System.Diagnostics.Debug.WriteLine(Directory.GetCurrentDirectory());
+              //      System.Diagnostics.Debug.WriteLine(Directory.GetCurrentDirectory());
 
-                    // does not work... -> save to array of StorageFiles?
+                    // does not work... -> save to array of StorageFiles?...
 
 
                     // TODO 2: Visualization
 
-                    //try
+                 /*   //try
                     BitmapImage img = new BitmapImage();
                     img = await LoadImage(myImgFile);
 //                    myImage.Source = img;
+*/
 
                 }
             }
@@ -770,7 +783,7 @@ namespace SDKTemplate
             return successful;
         }
 
-        private static async Task<BitmapImage> LoadImage(StorageFile file)
+     /*   private static async Task<BitmapImage> LoadImage(StorageFile file)
         {
             BitmapImage bitmapImage = new BitmapImage();
             FileRandomAccessStream stream = (FileRandomAccessStream)await file.OpenAsync(FileAccessMode.Read);
@@ -778,8 +791,7 @@ namespace SDKTemplate
             bitmapImage.SetSource(stream);
 
             return bitmapImage;
-
-        }
+        } */
 
         //
         private async Task<StorageFile> writeableBitmapToStorageFile(WriteableBitmap WB/*, string fileFormat*/)
@@ -812,13 +824,7 @@ namespace SDKTemplate
 
         private async void saveImgStorageFileToFolder(StorageFile file)
         {
-            //      string currDir = Directory.GetCurrentDirectory();
-            //      System.Diagnostics.Debug.WriteLine(currDir);
-
-            //      string pathString = System.IO.Path.Combine(currDir, "Screenshots");
-            //      System.Diagnostics.Debug.WriteLine(pathString);
-
-            //        System.IO.Directory.CreateDirectory(pathString);
+            // http://stackoverflow.com/questions/36550122/how-do-i-create-a-folder-in-a-uwp-application
 
             // debug - see where this folder is located, which we also have read/write permissions for
             string pathStringParent = ApplicationData.Current.LocalFolder.Path;
@@ -830,7 +836,9 @@ namespace SDKTemplate
             // Determine whether the directory exists
             if (!(Directory.Exists(pathStringChild)))
             {
-                await ApplicationData.Current.LocalFolder.CreateFolderAsync("Screenshots");
+                StorageFolder myFolder = await ApplicationData.Current.LocalFolder.CreateFolderAsync("Screenshots");
+                // TEST, Debug
+                myFolder = ApplicationData.Current.LocalFolder;
                 // debug
                 System.Diagnostics.Debug.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(pathStringChild));
             }
@@ -838,25 +846,40 @@ namespace SDKTemplate
                 System.Diagnostics.Debug.WriteLine("That path exists already.");
             }
 
+            try {
+                // try to save storage file to 
+                var stream = await file.OpenStreamForReadAsync();
 
-
+                // StorageFolder myFolder = await ApplicationData.Current.LocalFolder.GetFolderAsync("Screenshots");
+                // myFile = file = storageFile
+                using (Stream outputStream = await file.OpenStreamForWriteAsync())
+                {
+         // TODO: solve first error first, then fix this
+         //           await stream.CopyToAsync(outputStream);
+                }
+            }
+            catch (IOException e) {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                System.Diagnostics.Debug.WriteLine(e.StackTrace);
+            } catch(Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                System.Diagnostics.Debug.WriteLine(e.StackTrace);
+            }
 
         }
 
+   /*     public async Task SaveToLocalFolderAsync(Stream stream, string fileName) 
+        {
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+            StorageFile storageFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
+            using (Stream outputStream = await storageFile.OpenStreamForWriteAsync())
+            {
+                await stream.CopyToAsync(outputStream);
+            }
+        }
+        */
 
-
-
-
-
-        /*   public async Task SaveToLocalFolderAsync(StorageFile file)
-           {
-               StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-        //       StorageFile storageFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
-               using (Stream outputStream = await file.OpenStreamForWriteAsync())
-               {
-                   await file.CopyToAsync(outputStream);
-               }
-           }*/
 
 
 

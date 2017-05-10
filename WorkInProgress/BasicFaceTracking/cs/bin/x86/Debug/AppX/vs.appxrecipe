@@ -28,13 +28,13 @@
     <AppXManifest Include="D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-10T14:59:08.175</Modified>
+      <Modified>2017-05-10T17:59:12.334</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\BasicFaceTracking.exe">
       <PackagePath>entrypoint\BasicFaceTracking.exe</PackagePath>
-      <Modified>2017-05-10T14:59:07.651</Modified>
+      <Modified>2017-05-10T17:59:11.615</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Oana\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -495,11 +495,11 @@
     <AppxPackagedFile Include="D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-10T14:59:08.033</Modified>
+      <Modified>2017-05-10T17:59:12.151</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\Core\BasicFaceTracking.exe">
       <PackagePath>BasicFaceTracking.exe</PackagePath>
-      <Modified>2017-05-10T14:59:08.171</Modified>
+      <Modified>2017-05-10T17:59:12.329</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
