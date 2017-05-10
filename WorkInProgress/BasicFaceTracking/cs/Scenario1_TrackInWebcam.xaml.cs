@@ -27,6 +27,14 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Storage;
+using Windows.Storage.Streams;
+using System.IO;
+using Windows.Storage.Pickers;
+using Windows.Storage.AccessCache;
+//using System.Security.AccessControl;
+
 namespace SDKTemplate
 {
     /// <summary>
@@ -603,22 +611,24 @@ namespace SDKTemplate
             }
         }
 
-    // TODO - change stuff    ?
+        // TODO - change stuff    ?
         /// <summary>
         /// Handles "snapshot" button clicks to take a snapshot or clear the current display.
         /// </summary>
         /// <param name="sender">Button user clicked</param>
         /// <param name="e">Event data</param>
-        private void CameraSnapshotButton_Click(object sender, RoutedEventArgs e)
+        private async void CameraSnapshotButton_Click(object sender, RoutedEventArgs e)
         {
 
             // temp
-            System.Diagnostics.Debug.WriteLine("WOW "+count++);
+            System.Diagnostics.Debug.WriteLine("WOW " + count++);
+            //test
+            bool myBool = await saveToImgFile();
+            // test!
+            System.Diagnostics.Debug.WriteLine(myBool);
 
             // TODO HERE: 
             /*
-                - try to create git
-                - create new folder in project, where all images can be saved
                 - extract screenshot picture
                 - save picture as it is in image format
                 - find faces in it
@@ -686,5 +696,231 @@ namespace SDKTemplate
             }
         }
          */
+
+        /// <summary>
+        /// Takes the webcam image and FaceDetector results and assembles the visualization into an image file format, saves it.
+        /// </summary>
+        /// <param name="displaySource">Bitmap object holding the image we're going to display</param>
+        /// <param name="foundFaces">List of detected faces; output from FaceDetector</param>
+        private async Task<bool>saveToImgFile(/*WriteableBitmap displaySource, IList<DetectedFace> foundFaces*/)
+        {
+            bool successful = true;
+            try
+            {
+                // sollte im Streaming phase sein... 
+                if (this.currentState != ScenarioState.Streaming)
+                {
+                    return false;
+                }
+                WriteableBitmap displaySource = null;
+                IList<DetectedFace> faces = null;
+
+                // Create a VideoFrame object specifying the pixel format we want our capture image to be (NV12 bitmap in this case).
+                // GetPreviewFrame will convert the native webcam frame into this format.
+                const BitmapPixelFormat InputPixelFormat = BitmapPixelFormat.Nv12;
+                using (VideoFrame previewFrame = new VideoFrame(InputPixelFormat, (int)this.videoProperties.Width, (int)this.videoProperties.Height))
+                {
+                    // has to be used in async method
+                    await this.mediaCapture.GetPreviewFrameAsync(previewFrame);
+
+                    // The returned VideoFrame should be in the supported NV12 format but we need to verify this.
+                    if (FaceDetector.IsBitmapPixelFormatSupported(previewFrame.SoftwareBitmap.BitmapPixelFormat))
+                    {
+                        faces = await this.faceDetector.DetectFacesAsync(previewFrame.SoftwareBitmap);
+                    }
+                    else
+                    {
+                        this.rootPage.NotifyUser("PixelFormat '" + InputPixelFormat.ToString() + "' is not supported by FaceDetector", NotifyType.ErrorMessage);
+                    }
+                    // TODO: create png (?) save outside
+                    // Create a WritableBitmap for our visualization display; copy the original bitmap pixels to wb's buffer.
+                    // Note that WriteableBitmap doesn't support NV12 and we have to convert it to 32-bit BGRA.
+                    using (SoftwareBitmap convertedSource = SoftwareBitmap.Convert(previewFrame.SoftwareBitmap, BitmapPixelFormat.Bgra8))
+                    {
+                        displaySource = new WriteableBitmap(convertedSource.PixelWidth, convertedSource.PixelHeight);
+                        convertedSource.CopyToBuffer(displaySource.PixelBuffer);
+                    }
+
+                    // TODO 1: try save as img format
+                    StorageFile myImgFile = await writeableBitmapToStorageFile(displaySource);
+
+                    // TODO 1/2: test save
+                    saveImgStorageFileToFolder(myImgFile);
+
+                    // temp
+                    System.Diagnostics.Debug.WriteLine(Directory.GetCurrentDirectory());
+
+                    // does not work... -> save to array of StorageFiles?
+
+
+                    // TODO 2: Visualization
+
+                    //try
+                    BitmapImage img = new BitmapImage();
+                    img = await LoadImage(myImgFile);
+//                    myImage.Source = img;
+
+                }
+            }
+            catch(Exception ex)
+            {
+                this.rootPage.NotifyUser(ex.ToString(), NotifyType.ErrorMessage);
+                successful = false;
+            }
+            return successful;
+        }
+
+        private static async Task<BitmapImage> LoadImage(StorageFile file)
+        {
+            BitmapImage bitmapImage = new BitmapImage();
+            FileRandomAccessStream stream = (FileRandomAccessStream)await file.OpenAsync(FileAccessMode.Read);
+
+            bitmapImage.SetSource(stream);
+
+            return bitmapImage;
+
+        }
+
+        //
+        private async Task<StorageFile> writeableBitmapToStorageFile(WriteableBitmap WB/*, string fileFormat*/)
+        {
+            // http://stackoverflow.com/questions/17140774/how-to-save-a-writeablebitmap-as-a-file
+
+            string FileName = "MyFile"+count+".";
+            Guid BitmapEncoderGuid = BitmapEncoder.PngEncoderId;
+            FileName += "png"; //fileFormat;
+
+            var file = await Windows.Storage.ApplicationData.Current.TemporaryFolder.CreateFileAsync(FileName, CreationCollisionOption.GenerateUniqueName);
+            using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.ReadWrite))
+            {
+                BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoderGuid, stream);
+                Stream pixelStream = WB.PixelBuffer.AsStream();
+                byte[] pixels = new byte[pixelStream.Length];
+                await pixelStream.ReadAsync(pixels, 0, pixels.Length);
+
+                encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Ignore,
+                                    (uint)WB.PixelWidth,
+                                    (uint)WB.PixelHeight,
+                                    96.0,
+                                    96.0,
+                                    pixels);
+                await encoder.FlushAsync();
+            }
+            return file;
+        }
+
+
+        private async void saveImgStorageFileToFolder(StorageFile file)
+        {
+            //      string currDir = Directory.GetCurrentDirectory();
+            //      System.Diagnostics.Debug.WriteLine(currDir);
+
+            //      string pathString = System.IO.Path.Combine(currDir, "Screenshots");
+            //      System.Diagnostics.Debug.WriteLine(pathString);
+
+            //        System.IO.Directory.CreateDirectory(pathString);
+
+            // debug - see where this folder is located, which we also have read/write permissions for
+            string pathStringParent = ApplicationData.Current.LocalFolder.Path;
+            System.Diagnostics.Debug.WriteLine(pathStringParent);
+
+            // path to new created Screenshots folder
+            string pathStringChild = System.IO.Path.Combine(pathStringParent, "Screenshots");
+
+            // Determine whether the directory exists
+            if (!(Directory.Exists(pathStringChild)))
+            {
+                await ApplicationData.Current.LocalFolder.CreateFolderAsync("Screenshots");
+                // debug
+                System.Diagnostics.Debug.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(pathStringChild));
+            }
+            else {
+                System.Diagnostics.Debug.WriteLine("That path exists already.");
+            }
+
+
+
+
+        }
+
+
+
+
+
+
+        /*   public async Task SaveToLocalFolderAsync(StorageFile file)
+           {
+               StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+        //       StorageFile storageFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
+               using (Stream outputStream = await file.OpenStreamForWriteAsync())
+               {
+                   await file.CopyToAsync(outputStream);
+               }
+           }*/
+
+
+
+        // detector
+        // Oana: should run in background -> take pictures -> save them, one everytime person clicks on snapshot button...
+        // -> perform face detection on them but don't show it
+        // TODO
+
+        /// <summary>
+        /// Captures a single frame from the running webcam stream and executes the FaceDetector on the image. If successful calls SetupVisualization to display the results.
+        /// </summary>
+        /// <returns>Async Task object returning true if the capture was successful and false if an exception occurred.</returns>
+        /*     private async Task<bool> TakeSnapshotAndFindFaces()
+             {
+                 bool successful = true;
+                 /*
+                          try
+                          {
+                              if (this.currentState != ScenarioState.Streaming)
+                              {
+                                  return false;
+                              }
+
+                              WriteableBitmap displaySource = null;
+                              IList<DetectedFace> faces = null;
+
+                              // Create a VideoFrame object specifying the pixel format we want our capture image to be (NV12 bitmap in this case).
+                              // GetPreviewFrame will convert the native webcam frame into this format.
+                              const BitmapPixelFormat InputPixelFormat = BitmapPixelFormat.Nv12;
+                              using (VideoFrame previewFrame = new VideoFrame(InputPixelFormat, (int)this.videoProperties.Width, (int)this.videoProperties.Height))
+                              {
+                                  await this.mediaCapture.GetPreviewFrameAsync(previewFrame);
+
+                                  // The returned VideoFrame should be in the supported NV12 format but we need to verify this.
+                                  if (FaceDetector.IsBitmapPixelFormatSupported(previewFrame.SoftwareBitmap.BitmapPixelFormat))
+                                  {
+                                      faces = await this.faceDetector.DetectFacesAsync(previewFrame.SoftwareBitmap);
+                                  }
+                                  else
+                                  {
+                                      this.rootPage.NotifyUser("PixelFormat '" + InputPixelFormat.ToString() + "' is not supported by FaceDetector", NotifyType.ErrorMessage);
+                                  }
+
+                                  // TODO: create png (?) save outside
+                                  // Create a WritableBitmap for our visualization display; copy the original bitmap pixels to wb's buffer.
+                                  // Note that WriteableBitmap doesn't support NV12 and we have to convert it to 32-bit BGRA.
+                                  using (SoftwareBitmap convertedSource = SoftwareBitmap.Convert(previewFrame.SoftwareBitmap, BitmapPixelFormat.Bgra8))
+                                  {
+                                      displaySource = new WriteableBitmap(convertedSource.PixelWidth, convertedSource.PixelHeight);
+                                      convertedSource.CopyToBuffer(displaySource.PixelBuffer);
+                                  }
+                   // TODO Oana: change this, but insert it  - error because SetupVisualization method here takes different arguments... overload?
+                                  // Create our display using the available image and face results.
+                                  this.SetupVisualization2(displaySource, faces);
+                              }
+                          }
+                          catch (Exception ex)
+                          {
+                              this.rootPage.NotifyUser(ex.ToString(), NotifyType.ErrorMessage);
+                              successful = false;
+                          }
+              *
+                 return successful;
+             }
+             */
     }
 }

@@ -27,6 +27,8 @@
         <Resource Language="x-generate"/>
     </Resources>
 
+ 
+  
     <Applications>
         <Application Id="App"
           Executable="$targetnametoken$.exe"
@@ -51,4 +53,5 @@
         <Capability Name="internetClient" />
         <DeviceCapability Name="webcam" />
     </Capabilities>
+  
 </Package>
