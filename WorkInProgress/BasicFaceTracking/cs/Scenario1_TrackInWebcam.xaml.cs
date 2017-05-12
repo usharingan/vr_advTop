@@ -96,9 +96,12 @@ namespace SDKTemplate
         private SemaphoreSlim frameProcessingSemaphore = new SemaphoreSlim(1);
 
         // test
-        int count = 0;
+        private int count = 0;
 
         private SemaphoreSlim snapshotSemaphore = new SemaphoreSlim(1);
+        // TEST
+        private SemaphoreSlim writeToFileSemaphore = new SemaphoreSlim(1);
+
 
         /// <summary>
         /// Constructor
@@ -125,13 +128,7 @@ namespace SDKTemplate
             /// <summary>
             /// Webcam is actively engaged and a live video stream is displayed.
             /// </summary>
-            Streaming //,
-
-            /// <summary>
-            /// Snapshot image has been captured and is being displayed along with detected faces; webcam is not active. 
-        /// -> should not be displayed tho -> do smth else -> save img as PNG?
-            /// </summary>
-      //      Snapshot  //...
+            Streaming
         }
 
         /// <summary>
@@ -149,7 +146,6 @@ namespace SDKTemplate
                 this.faceTracker = await FaceTracker.CreateAsync();
             }
 
-      // Oana: see if needed... and for what
             // The 'await' operation can only be used from within an async method but class constructors
             // cannot be labeled as async, and so we'll initialize FaceDetector here.
             if (this.faceDetector == null)
@@ -264,7 +260,8 @@ namespace SDKTemplate
 
         }
 
-  // Oana: should run in front
+        // tracker
+        // should run in front
         /// <summary>
         /// This method is invoked by a ThreadPoolTimer to execute the FaceTracker and Visualization logic at approximately 15 frames per second.
         /// </summary>
@@ -334,14 +331,13 @@ namespace SDKTemplate
             {
                 frameProcessingSemaphore.Release();
             }
-
         }
 
 
+// TODO Oana: remove maybe
      // detector
-     // Oana: should run in background -> take pictures -> save them, one everytime person clicks on snapshot button...
+     // should run in background -> take pictures -> save them, one everytime person clicks on snapshot button...
      // -> perform face detection on them but don't show it
-     // TODO
         /// <summary>
         /// Captures a single frame from the running webcam stream and executes the FaceDetector on the image. If successful calls SetupVisualization to display the results.
         /// </summary>
@@ -537,30 +533,6 @@ namespace SDKTemplate
                     this.currentState = newState;
                     this.CameraStreamingButton.IsEnabled = true;
                     break;
-
-          /*      case ScenarioState.Snapshot:
-                    // ?
-                    // TODO
-                    // temp
-                    System.Diagnostics.Debug.WriteLine("Check");
-                    //   System.Console.WriteLine("Wow");
-
-                    // TODO: Sondercase
-                    if (!await this.TakeSnapshotAndFindFaces())
-                    {
-                        this.ChangeScenarioState(ScenarioState.Idle);
-                        break;
-                    }
-                    
-                    // ok
-                    this.VisualizationCanvas.Children.Clear();
-                    this.CameraStreamingButton.Content = "Stop Streaming";
-                    this.CameraSnapshotButton.IsEnabled = true;
-                    this.CameraSnapshotButton.Content = "Take Snapshot";
-                    this.currentState = newState;
-                    this.CameraStreamingButton.IsEnabled = true;
-                    break;
-            */
             }
         }
 
@@ -578,7 +550,6 @@ namespace SDKTemplate
                 ChangeScenarioState(ScenarioState.Idle);
             });
         }
-
         
         /// <summary>
         /// Handles MediaCapture changes by shutting down streaming and returning to Idle state.
@@ -593,8 +564,7 @@ namespace SDKTemplate
             {
                 ChangeScenarioState(ScenarioState.Idle);
             });
-        }
-         
+        }   
 
         /// <summary>
         /// Handles "streaming" button clicks to start/stop webcam streaming.
@@ -622,9 +592,8 @@ namespace SDKTemplate
         /// <param name="e">Event data</param>
         private async void CameraSnapshotButton_Click(object sender, RoutedEventArgs e)
         {
-
             // temp
-            // System.Diagnostics.Debug.WriteLine("WOW " + count++);
+            System.Diagnostics.Debug.WriteLine("WOW " + count++);
             //test
             bool myBool = await saveToImgFile();
             // test!
@@ -632,26 +601,15 @@ namespace SDKTemplate
 
             // TODO HERE: 
             /*
-                - extract screenshot picture
-                - save picture as it is in image format
+                - extract screenshot picture   *
+                - save picture as it is in image format  * 
+
                 - find faces in it
                 - draw faces in
                 - save picture withdrawn in faces in image format
 
              */
 
-
-            /*        if (this.currentState == ScenarioState.Streaming)
-                    {
-                        this.rootPage.NotifyUser(string.Empty, NotifyType.StatusMessage);
-                        this.ChangeScenarioState(ScenarioState.Snapshot);
-                    }
-                    else
-                    {
-                        this.rootPage.NotifyUser(string.Empty, NotifyType.StatusMessage);
-                        this.ChangeScenarioState(ScenarioState.Idle);
-                    }  
-             */
         }
 
 
@@ -705,8 +663,10 @@ namespace SDKTemplate
         /// </summary>
         /// <param name="displaySource">Bitmap object holding the image we're going to display</param>
         /// <param name="foundFaces">List of detected faces; output from FaceDetector</param>
-        private async Task<bool>saveToImgFile(/*WriteableBitmap displaySource, IList<DetectedFace> foundFaces*/)
+        private async Task<bool>saveToImgFile()
         {
+            // http://stackoverflow.com/questions/7612602/why-cant-i-use-the-await-operator-within-the-body-of-a-lock-statement
+
             bool successful = true;
             try
             {
@@ -726,9 +686,8 @@ namespace SDKTemplate
                     await snapshotSemaphore.WaitAsync();
                     try
                     {
-                        // has to be used in async method
+                        // has to be used in async method - !
                         await this.mediaCapture.GetPreviewFrameAsync(previewFrame);
-
                     }
                     finally
                     {
@@ -744,7 +703,7 @@ namespace SDKTemplate
                     {
                         this.rootPage.NotifyUser("PixelFormat '" + InputPixelFormat.ToString() + "' is not supported by FaceDetector", NotifyType.ErrorMessage);
                     }
-                    // TODO: create png (?) save outside
+                    // Create png save outside
                     // Create a WritableBitmap for our visualization display; copy the original bitmap pixels to wb's buffer.
                     // Note that WriteableBitmap doesn't support NV12 and we have to convert it to 32-bit BGRA.
                     using (SoftwareBitmap convertedSource = SoftwareBitmap.Convert(previewFrame.SoftwareBitmap, BitmapPixelFormat.Bgra8))
@@ -753,25 +712,14 @@ namespace SDKTemplate
                         convertedSource.CopyToBuffer(displaySource.PixelBuffer);
                     }
 
-                    // TODO 1: try save as img format
-                    StorageFile myImgFile = await writeableBitmapToStorageFile(displaySource);
-
-                    // TODO 1/2: test save
-                    saveImgStorageFileToFolder(myImgFile);
-
-                    // temp
-              //      System.Diagnostics.Debug.WriteLine(Directory.GetCurrentDirectory());
-
-                    // does not work... -> save to array of StorageFiles?...
+                    // save as img format into Screenshots folder
+                    StorageFile myImgFile = await writeableBitmapToFolder(displaySource);
 
 
-                    // TODO 2: Visualization
 
-                 /*   //try
-                    BitmapImage img = new BitmapImage();
-                    img = await LoadImage(myImgFile);
-//                    myImage.Source = img;
-*/
+                    // TODO 2: Visualization - save also with visualization?
+
+
 
                 }
             }
@@ -783,18 +731,10 @@ namespace SDKTemplate
             return successful;
         }
 
-     /*   private static async Task<BitmapImage> LoadImage(StorageFile file)
-        {
-            BitmapImage bitmapImage = new BitmapImage();
-            FileRandomAccessStream stream = (FileRandomAccessStream)await file.OpenAsync(FileAccessMode.Read);
-
-            bitmapImage.SetSource(stream);
-
-            return bitmapImage;
-        } */
-
-        //
-        private async Task<StorageFile> writeableBitmapToStorageFile(WriteableBitmap WB/*, string fileFormat*/)
+        // WriteableBitmap = unencodierte bilddaten
+        // Compression
+        // Encoder
+        private async Task<StorageFile> writeableBitmapToFolder(WriteableBitmap WB/*, string fileFormat*/)
         {
             // http://stackoverflow.com/questions/17140774/how-to-save-a-writeablebitmap-as-a-file
 
@@ -802,7 +742,22 @@ namespace SDKTemplate
             Guid BitmapEncoderGuid = BitmapEncoder.PngEncoderId;
             FileName += "png"; //fileFormat;
 
-            var file = await Windows.Storage.ApplicationData.Current.TemporaryFolder.CreateFileAsync(FileName, CreationCollisionOption.GenerateUniqueName);
+            // Create directory to save screenshots in
+            string myLocalPath = ApplicationData.Current.LocalFolder.Path;
+            string myScreenshotPath = System.IO.Path.Combine(myLocalPath, "Screenshots");
+            StorageFolder myFolder = ApplicationData.Current.LocalFolder;
+            // Determine whether the directory exists
+            if (!(Directory.Exists(myScreenshotPath)))
+            {
+                myFolder = await ApplicationData.Current.LocalFolder.CreateFolderAsync("Screenshots");
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("That path exists already.");
+                myFolder = await StorageFolder.GetFolderFromPathAsync(myScreenshotPath);
+            }
+            // Compress file and write it to folder
+            var file = await myFolder.CreateFileAsync(FileName, CreationCollisionOption.GenerateUniqueName);
             using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.ReadWrite))
             {
                 BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoderGuid, stream);
@@ -818,13 +773,15 @@ namespace SDKTemplate
                                     pixels);
                 await encoder.FlushAsync();
             }
-            return file;
+            return file; // necessary?
         }
 
 
-        private async void saveImgStorageFileToFolder(StorageFile file)
+    /*    private async void saveImgStorageFileToFolder(StorageFile file)
         {
             // http://stackoverflow.com/questions/36550122/how-do-i-create-a-folder-in-a-uwp-application
+
+            Stream stream;// = new System.Threading.Tasks.Task<Stream>();
 
             // debug - see where this folder is located, which we also have read/write permissions for
             string pathStringParent = ApplicationData.Current.LocalFolder.Path;
@@ -848,14 +805,44 @@ namespace SDKTemplate
 
             try {
                 // try to save storage file to 
-                var stream = await file.OpenStreamForReadAsync();
+                
+                // TRY
+                await writeToFileSemaphore.WaitAsync();
+                try
+                {
+                    // LESEN
+                    stream = await file.OpenStreamForReadAsync();
+                }
+                finally
+                {
+                    writeToFileSemaphore.Release();
+                    // close file? - not yet
+
+                }
 
                 // StorageFolder myFolder = await ApplicationData.Current.LocalFolder.GetFolderAsync("Screenshots");
                 // myFile = file = storageFile
+                
+                // WRITE
                 using (Stream outputStream = await file.OpenStreamForWriteAsync())
                 {
-         // TODO: solve first error first, then fix this
-         //           await stream.CopyToAsync(outputStream);
+       // TODO: fix this
+                    // TRY
+                    await writeToFileSemaphore.WaitAsync();
+                    try
+                    {
+           //             await stream.CopyToAsync(outputStream);
+                    }
+                    finally
+                    {
+                        writeToFileSemaphore.Release();
+                        // close file?
+                        // close outputstream?
+                        // close stream?
+
+                    }
+
+
                 }
             }
             catch (IOException e) {
@@ -867,9 +854,11 @@ namespace SDKTemplate
                 System.Diagnostics.Debug.WriteLine(e.StackTrace);
             }
 
-        }
+        }*/
 
-   /*     public async Task SaveToLocalFolderAsync(Stream stream, string fileName) 
+
+
+    /*    public async Task SaveToLocalFolderAsync(Stream stream, string fileName) 
         {
             StorageFolder localFolder = ApplicationData.Current.LocalFolder;
             StorageFile storageFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
@@ -878,72 +867,7 @@ namespace SDKTemplate
                 await stream.CopyToAsync(outputStream);
             }
         }
-        */
+      */  
 
-
-
-
-        // detector
-        // Oana: should run in background -> take pictures -> save them, one everytime person clicks on snapshot button...
-        // -> perform face detection on them but don't show it
-        // TODO
-
-        /// <summary>
-        /// Captures a single frame from the running webcam stream and executes the FaceDetector on the image. If successful calls SetupVisualization to display the results.
-        /// </summary>
-        /// <returns>Async Task object returning true if the capture was successful and false if an exception occurred.</returns>
-        /*     private async Task<bool> TakeSnapshotAndFindFaces()
-             {
-                 bool successful = true;
-                 /*
-                          try
-                          {
-                              if (this.currentState != ScenarioState.Streaming)
-                              {
-                                  return false;
-                              }
-
-                              WriteableBitmap displaySource = null;
-                              IList<DetectedFace> faces = null;
-
-                              // Create a VideoFrame object specifying the pixel format we want our capture image to be (NV12 bitmap in this case).
-                              // GetPreviewFrame will convert the native webcam frame into this format.
-                              const BitmapPixelFormat InputPixelFormat = BitmapPixelFormat.Nv12;
-                              using (VideoFrame previewFrame = new VideoFrame(InputPixelFormat, (int)this.videoProperties.Width, (int)this.videoProperties.Height))
-                              {
-                                  await this.mediaCapture.GetPreviewFrameAsync(previewFrame);
-
-                                  // The returned VideoFrame should be in the supported NV12 format but we need to verify this.
-                                  if (FaceDetector.IsBitmapPixelFormatSupported(previewFrame.SoftwareBitmap.BitmapPixelFormat))
-                                  {
-                                      faces = await this.faceDetector.DetectFacesAsync(previewFrame.SoftwareBitmap);
-                                  }
-                                  else
-                                  {
-                                      this.rootPage.NotifyUser("PixelFormat '" + InputPixelFormat.ToString() + "' is not supported by FaceDetector", NotifyType.ErrorMessage);
-                                  }
-
-                                  // TODO: create png (?) save outside
-                                  // Create a WritableBitmap for our visualization display; copy the original bitmap pixels to wb's buffer.
-                                  // Note that WriteableBitmap doesn't support NV12 and we have to convert it to 32-bit BGRA.
-                                  using (SoftwareBitmap convertedSource = SoftwareBitmap.Convert(previewFrame.SoftwareBitmap, BitmapPixelFormat.Bgra8))
-                                  {
-                                      displaySource = new WriteableBitmap(convertedSource.PixelWidth, convertedSource.PixelHeight);
-                                      convertedSource.CopyToBuffer(displaySource.PixelBuffer);
-                                  }
-                   // TODO Oana: change this, but insert it  - error because SetupVisualization method here takes different arguments... overload?
-                                  // Create our display using the available image and face results.
-                                  this.SetupVisualization2(displaySource, faces);
-                              }
-                          }
-                          catch (Exception ex)
-                          {
-                              this.rootPage.NotifyUser(ex.ToString(), NotifyType.ErrorMessage);
-                              successful = false;
-                          }
-              *
-                 return successful;
-             }
-             */
     }
 }
