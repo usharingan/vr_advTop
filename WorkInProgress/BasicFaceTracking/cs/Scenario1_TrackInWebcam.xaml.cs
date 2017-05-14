@@ -345,7 +345,7 @@ namespace SDKTemplate
         private async Task<bool> TakeSnapshotAndFindFaces()
         {
             bool successful = true;
-   /*
+   
             try
             {
                 if (this.currentState != ScenarioState.Streaming)
@@ -391,7 +391,7 @@ namespace SDKTemplate
                 this.rootPage.NotifyUser(ex.ToString(), NotifyType.ErrorMessage);
                 successful = false;
             }
-*/
+
             return successful;
         }
 
@@ -446,12 +446,15 @@ namespace SDKTemplate
             System.Diagnostics.Debug.WriteLine("Wow - SetupVisualization2");
 
 
-
-            /*
+            // TODO: adapt this method
+            // TODO after: then use it to print images to folder
+            
             ImageBrush brush = new ImageBrush();
             brush.ImageSource = displaySource;
             brush.Stretch = Stretch.Fill;
             this.SnapshotCanvas.Background = brush;
+            // try
+        //    this.RenderTargetBitmap.Background = brush;
 
             if (foundFaces != null)
             {
@@ -492,7 +495,7 @@ namespace SDKTemplate
             }
 
             this.rootPage.NotifyUser(message, NotifyType.StatusMessage);
-            */
+            
         }
 
         /// <summary>
@@ -734,7 +737,7 @@ namespace SDKTemplate
         // WriteableBitmap = unencodierte bilddaten
         // Compression
         // Encoder
-        private async Task<StorageFile> writeableBitmapToFolder(WriteableBitmap WB/*, string fileFormat*/)
+        private async Task<StorageFile> writeableBitmapToFolder(WriteableBitmap WB)
         {
             // http://stackoverflow.com/questions/17140774/how-to-save-a-writeablebitmap-as-a-file
 
@@ -775,86 +778,6 @@ namespace SDKTemplate
             }
             return file; // necessary?
         }
-
-
-    /*    private async void saveImgStorageFileToFolder(StorageFile file)
-        {
-            // http://stackoverflow.com/questions/36550122/how-do-i-create-a-folder-in-a-uwp-application
-
-            Stream stream;// = new System.Threading.Tasks.Task<Stream>();
-
-            // debug - see where this folder is located, which we also have read/write permissions for
-            string pathStringParent = ApplicationData.Current.LocalFolder.Path;
-            System.Diagnostics.Debug.WriteLine(pathStringParent);
-
-            // path to new created Screenshots folder
-            string pathStringChild = System.IO.Path.Combine(pathStringParent, "Screenshots");
-
-            // Determine whether the directory exists
-            if (!(Directory.Exists(pathStringChild)))
-            {
-                StorageFolder myFolder = await ApplicationData.Current.LocalFolder.CreateFolderAsync("Screenshots");
-                // TEST, Debug
-                myFolder = ApplicationData.Current.LocalFolder;
-                // debug
-                System.Diagnostics.Debug.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(pathStringChild));
-            }
-            else {
-                System.Diagnostics.Debug.WriteLine("That path exists already.");
-            }
-
-            try {
-                // try to save storage file to 
-                
-                // TRY
-                await writeToFileSemaphore.WaitAsync();
-                try
-                {
-                    // LESEN
-                    stream = await file.OpenStreamForReadAsync();
-                }
-                finally
-                {
-                    writeToFileSemaphore.Release();
-                    // close file? - not yet
-
-                }
-
-                // StorageFolder myFolder = await ApplicationData.Current.LocalFolder.GetFolderAsync("Screenshots");
-                // myFile = file = storageFile
-                
-                // WRITE
-                using (Stream outputStream = await file.OpenStreamForWriteAsync())
-                {
-       // TODO: fix this
-                    // TRY
-                    await writeToFileSemaphore.WaitAsync();
-                    try
-                    {
-           //             await stream.CopyToAsync(outputStream);
-                    }
-                    finally
-                    {
-                        writeToFileSemaphore.Release();
-                        // close file?
-                        // close outputstream?
-                        // close stream?
-
-                    }
-
-
-                }
-            }
-            catch (IOException e) {
-                System.Diagnostics.Debug.WriteLine(e.Message);
-                System.Diagnostics.Debug.WriteLine(e.StackTrace);
-            } catch(Exception e)
-            {
-                System.Diagnostics.Debug.WriteLine(e.Message);
-                System.Diagnostics.Debug.WriteLine(e.StackTrace);
-            }
-
-        }*/
 
 
 
