@@ -31,6 +31,8 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using System.IO;
+using System.Linq;
+using System.Numerics;
 
 namespace SDKTemplate
 {
@@ -395,8 +397,8 @@ namespace SDKTemplate
             return successful;
         }
 
-  // TRACKER
-  // Oana: Box zeichnen auf faces auf display
+     // TRACKER
+        // Oana: Box zeichnen auf faces auf display
         /// <summary>
         /// Takes the webcam image and FaceTracker results and assembles the visualization onto the Canvas.
         /// </summary>
@@ -414,6 +416,11 @@ namespace SDKTemplate
                 double widthScale = framePizelSize.Width / actualWidth;
                 double heightScale = framePizelSize.Height / actualHeight;
 
+                // sort faces according to their X position
+                foundFaces = foundFaces.OrderBy(face => face.FaceBox.X).ToList();
+
+                int count = 0;
+
                 foreach (DetectedFace face in foundFaces)
                 {
                     // Create a rectangle element for displaying the face box but since we're using a Canvas
@@ -424,9 +431,23 @@ namespace SDKTemplate
                     box.Fill = this.fillBrush;
                     box.Stroke = this.lineBrush;
                     box.StrokeThickness = this.lineThickness;
+                    // positioning on canvas: textBlock.Margin = new Thickness(left, top, right, bottom);
                     box.Margin = new Thickness((uint)(face.FaceBox.X / widthScale), (uint)(face.FaceBox.Y / heightScale), 0, 0);
 
                     this.VisualizationCanvas.Children.Add(box);
+
+                    // Index of faces - Visualization: starting from 0, from left to right
+                    TextBlock txtBlock = new TextBlock();
+                    txtBlock.FontSize = 18;
+                    txtBlock.Text = ""+count;
+                    txtBlock.Foreground = new SolidColorBrush(Windows.UI.Colors.Red);
+                    txtBlock.Width = (uint)(face.FaceBox.Width / widthScale);
+                    txtBlock.Height = (uint)(face.FaceBox.Height / heightScale);
+                    // positioning on canvas: textBlock.Margin = new Thickness(left, top, right, bottom);
+                    txtBlock.Margin = new Thickness((uint)(face.FaceBox.X / widthScale), (uint)(face.FaceBox.Y / heightScale), 0, 0);
+                    this.VisualizationCanvas.Children.Add(txtBlock);
+
+                    count++;
                 }
             }
         }
@@ -449,7 +470,7 @@ namespace SDKTemplate
             // TODO: adapt this method
             // TODO after: then use it to print images to folder
             
-            ImageBrush brush = new ImageBrush();
+   /*         ImageBrush brush = new ImageBrush();
             brush.ImageSource = displaySource;
             brush.Stretch = Stretch.Fill;
             this.SnapshotCanvas.Background = brush;
@@ -495,7 +516,7 @@ namespace SDKTemplate
             }
 
             this.rootPage.NotifyUser(message, NotifyType.StatusMessage);
-            
+    */        
         }
 
         /// <summary>
@@ -601,65 +622,7 @@ namespace SDKTemplate
             bool myBool = await saveToImgFile();
             // test!
             System.Diagnostics.Debug.WriteLine(myBool);
-
-            // TODO HERE: 
-            /*
-                - extract screenshot picture   *
-                - save picture as it is in image format  * 
-
-                - find faces in it
-                - draw faces in
-                - save picture withdrawn in faces in image format
-
-             */
-
         }
-
-
-
-        /* in case of necessity...
-           /// Updates any existing face bounding boxes in response to changes in the size of the Canvas.
-        /// <summary>
-        /// Updates any existing face bounding boxes in response to changes in the size of the Canvas.
-        /// </summary>
-        /// <param name="sender">Canvas whose size has changed</param>
-        /// <param name="e">Event data</param>
-        private void SnapshotCanvas_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            try
-            {
-                // If the Canvas is resized we must recompute a new scaling factor and
-                // apply it to each face box.
-                if (this.currentState == ScenarioState.Snapshot && this.SnapshotCanvas.Background != null)
-                {
-                    WriteableBitmap displaySource = (this.SnapshotCanvas.Background as ImageBrush).ImageSource as WriteableBitmap;
-
-                    double widthScale = displaySource.PixelWidth / this.SnapshotCanvas.ActualWidth;
-                    double heightScale = displaySource.PixelHeight / this.SnapshotCanvas.ActualHeight;
-
-                    foreach (var item in this.SnapshotCanvas.Children)
-                    {
-                        Rectangle box = item as Rectangle;
-                        if (box == null)
-                        {
-                            continue;
-                        }
-
-                        // We saved the original size of the face box in the rectangles Tag field.
-                        BitmapBounds faceBounds = (BitmapBounds)box.Tag;
-                        box.Width = (uint)(faceBounds.Width / widthScale);
-                        box.Height = (uint)(faceBounds.Height / heightScale);
-
-                        box.Margin = new Thickness((uint)(faceBounds.X / widthScale), (uint)(faceBounds.Y / heightScale), 0, 0);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                this.rootPage.NotifyUser(ex.ToString(), NotifyType.ErrorMessage);
-            }
-        }
-         */
 
         /// <summary>
         /// Takes the webcam image and FaceDetector results and assembles the visualization into an image file format, saves it.
@@ -777,20 +740,6 @@ namespace SDKTemplate
                 await encoder.FlushAsync();
             }
             return file; // necessary?
-        }
-
-
-
-    /*    public async Task SaveToLocalFolderAsync(Stream stream, string fileName) 
-        {
-            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-            StorageFile storageFile = await localFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
-            using (Stream outputStream = await storageFile.OpenStreamForWriteAsync())
-            {
-                await stream.CopyToAsync(outputStream);
-            }
-        }
-      */  
-
+        } 
     }
 }
