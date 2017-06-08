@@ -1,5 +1,4 @@
 {
-  "locked": false,
   "version": 2,
   "targets": {
     "UAP,Version=v10.0": {
@@ -266,6 +265,49 @@
         },
         "runtime": {
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "OpenCV.Win.Core/310.6.1": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/win10-arm/native/opencv_core310.dll": {
+            "assetType": "native",
+            "rid": "win10-arm"
+          },
+          "runtimes/win10-arm/native/opencv_core310d.dll": {
+            "assetType": "native",
+            "rid": "win10-arm"
+          },
+          "runtimes/win10-x64/native/opencv_core310.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x64/native/opencv_core310d.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x86/native/opencv_core310.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          },
+          "runtimes/win10-x86/native/opencv_core310d.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          }
+        }
+      },
+      "OpenCvSharp3-WithoutDll/3.2.0.20170324": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
+        },
+        "compile": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -2145,6 +2187,27 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "OpenCV.Win.Core/310.6.1": {
+        "type": "package",
+        "native": {
+          "runtimes/win10-arm/native/opencv_core310.dll": {},
+          "runtimes/win10-arm/native/opencv_core310d.dll": {}
+        }
+      },
+      "OpenCvSharp3-WithoutDll/3.2.0.20170324": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
+        },
+        "compile": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -3872,6 +3935,27 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "OpenCV.Win.Core/310.6.1": {
+        "type": "package",
+        "native": {
+          "runtimes/win10-arm/native/opencv_core310.dll": {},
+          "runtimes/win10-arm/native/opencv_core310d.dll": {}
+        }
+      },
+      "OpenCvSharp3-WithoutDll/3.2.0.20170324": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
+        },
+        "compile": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -5595,6 +5679,27 @@
         },
         "runtime": {
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "OpenCV.Win.Core/310.6.1": {
+        "type": "package",
+        "native": {
+          "runtimes/win10-x64/native/opencv_core310.dll": {},
+          "runtimes/win10-x64/native/opencv_core310d.dll": {}
+        }
+      },
+      "OpenCvSharp3-WithoutDll/3.2.0.20170324": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
+        },
+        "compile": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -7324,6 +7429,27 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "OpenCV.Win.Core/310.6.1": {
+        "type": "package",
+        "native": {
+          "runtimes/win10-x64/native/opencv_core310.dll": {},
+          "runtimes/win10-x64/native/opencv_core310d.dll": {}
+        }
+      },
+      "OpenCvSharp3-WithoutDll/3.2.0.20170324": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
+        },
+        "compile": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -9047,6 +9173,27 @@
         },
         "runtime": {
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "OpenCV.Win.Core/310.6.1": {
+        "type": "package",
+        "native": {
+          "runtimes/win10-x86/native/opencv_core310.dll": {},
+          "runtimes/win10-x86/native/opencv_core310d.dll": {}
+        }
+      },
+      "OpenCvSharp3-WithoutDll/3.2.0.20170324": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
+        },
+        "compile": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -10774,6 +10921,27 @@
         },
         "runtime": {
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "OpenCV.Win.Core/310.6.1": {
+        "type": "package",
+        "native": {
+          "runtimes/win10-x86/native/opencv_core310.dll": {},
+          "runtimes/win10-x86/native/opencv_core310d.dll": {}
+        }
+      },
+      "OpenCvSharp3-WithoutDll/3.2.0.20170324": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
+        },
+        "compile": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/OpenCvSharp.Blob.dll": {},
+          "lib/uap10.0/OpenCvSharp.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -12856,6 +13024,171 @@
         "ref/net46/Microsoft.Win32.Primitives.dll",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._"
+      ]
+    },
+    "OpenCV.Win.Core/310.6.1": {
+      "sha512": "3QYee3UT4kRLWOhze2CCZXOfFoB0VjDsiGntr0EUn/nlc6h8anwrHwhCx6x5ks8Jbg2tCV909XTtUV+beaJzWw==",
+      "type": "package",
+      "path": "opencv.win.core/310.6.1",
+      "files": [
+        "build/native/opencv.win.core.targets",
+        "build/native/win10-arm/opencv_core310.lib",
+        "build/native/win10-arm/opencv_core310d.lib",
+        "build/native/win10-x64/opencv_core310.lib",
+        "build/native/win10-x64/opencv_core310d.lib",
+        "build/native/win10-x86/opencv_core310.lib",
+        "build/native/win10-x86/opencv_core310d.lib",
+        "include/opencv/cv.h",
+        "include/opencv/cv.hpp",
+        "include/opencv/cvaux.h",
+        "include/opencv/cvaux.hpp",
+        "include/opencv/cvwimage.h",
+        "include/opencv/cxcore.h",
+        "include/opencv/cxcore.hpp",
+        "include/opencv/cxeigen.hpp",
+        "include/opencv/cxmisc.h",
+        "include/opencv/highgui.h",
+        "include/opencv/ml.h",
+        "include/opencv2/core.hpp",
+        "include/opencv2/core/affine.hpp",
+        "include/opencv2/core/base.hpp",
+        "include/opencv2/core/bufferpool.hpp",
+        "include/opencv2/core/core.hpp",
+        "include/opencv2/core/core_c.h",
+        "include/opencv2/core/cuda.hpp",
+        "include/opencv2/core/cuda.inl.hpp",
+        "include/opencv2/core/cuda/block.hpp",
+        "include/opencv2/core/cuda/border_interpolate.hpp",
+        "include/opencv2/core/cuda/color.hpp",
+        "include/opencv2/core/cuda/common.hpp",
+        "include/opencv2/core/cuda/datamov_utils.hpp",
+        "include/opencv2/core/cuda/detail/color_detail.hpp",
+        "include/opencv2/core/cuda/detail/reduce.hpp",
+        "include/opencv2/core/cuda/detail/reduce_key_val.hpp",
+        "include/opencv2/core/cuda/detail/transform_detail.hpp",
+        "include/opencv2/core/cuda/detail/type_traits_detail.hpp",
+        "include/opencv2/core/cuda/detail/vec_distance_detail.hpp",
+        "include/opencv2/core/cuda/dynamic_smem.hpp",
+        "include/opencv2/core/cuda/emulation.hpp",
+        "include/opencv2/core/cuda/filters.hpp",
+        "include/opencv2/core/cuda/funcattrib.hpp",
+        "include/opencv2/core/cuda/functional.hpp",
+        "include/opencv2/core/cuda/limits.hpp",
+        "include/opencv2/core/cuda/reduce.hpp",
+        "include/opencv2/core/cuda/saturate_cast.hpp",
+        "include/opencv2/core/cuda/scan.hpp",
+        "include/opencv2/core/cuda/simd_functions.hpp",
+        "include/opencv2/core/cuda/transform.hpp",
+        "include/opencv2/core/cuda/type_traits.hpp",
+        "include/opencv2/core/cuda/utility.hpp",
+        "include/opencv2/core/cuda/vec_distance.hpp",
+        "include/opencv2/core/cuda/vec_math.hpp",
+        "include/opencv2/core/cuda/vec_traits.hpp",
+        "include/opencv2/core/cuda/warp.hpp",
+        "include/opencv2/core/cuda/warp_reduce.hpp",
+        "include/opencv2/core/cuda/warp_shuffle.hpp",
+        "include/opencv2/core/cuda_stream_accessor.hpp",
+        "include/opencv2/core/cuda_types.hpp",
+        "include/opencv2/core/cvdef.h",
+        "include/opencv2/core/cvstd.hpp",
+        "include/opencv2/core/cvstd.inl.hpp",
+        "include/opencv2/core/directx.hpp",
+        "include/opencv2/core/eigen.hpp",
+        "include/opencv2/core/fast_math.hpp",
+        "include/opencv2/core/hal/hal.hpp",
+        "include/opencv2/core/hal/interface.h",
+        "include/opencv2/core/hal/intrin.hpp",
+        "include/opencv2/core/hal/intrin_cpp.hpp",
+        "include/opencv2/core/hal/intrin_neon.hpp",
+        "include/opencv2/core/hal/intrin_sse.hpp",
+        "include/opencv2/core/ippasync.hpp",
+        "include/opencv2/core/mat.hpp",
+        "include/opencv2/core/mat.inl.hpp",
+        "include/opencv2/core/matx.hpp",
+        "include/opencv2/core/neon_utils.hpp",
+        "include/opencv2/core/ocl.hpp",
+        "include/opencv2/core/ocl_genbase.hpp",
+        "include/opencv2/core/opengl.hpp",
+        "include/opencv2/core/operations.hpp",
+        "include/opencv2/core/optim.hpp",
+        "include/opencv2/core/persistence.hpp",
+        "include/opencv2/core/private.cuda.hpp",
+        "include/opencv2/core/private.hpp",
+        "include/opencv2/core/ptr.inl.hpp",
+        "include/opencv2/core/saturate.hpp",
+        "include/opencv2/core/sse_utils.hpp",
+        "include/opencv2/core/traits.hpp",
+        "include/opencv2/core/types.hpp",
+        "include/opencv2/core/types_c.h",
+        "include/opencv2/core/utility.hpp",
+        "include/opencv2/core/va_intel.hpp",
+        "include/opencv2/core/version.hpp",
+        "include/opencv2/core/wimage.hpp",
+        "opencv.win.core.310.6.1.nupkg.sha512",
+        "opencv.win.core.nuspec",
+        "runtimes/win10-arm/native/opencv_core310.dll",
+        "runtimes/win10-arm/native/opencv_core310d.dll",
+        "runtimes/win10-x64/native/opencv_core310.dll",
+        "runtimes/win10-x64/native/opencv_core310d.dll",
+        "runtimes/win10-x86/native/opencv_core310.dll",
+        "runtimes/win10-x86/native/opencv_core310d.dll"
+      ]
+    },
+    "OpenCvSharp3-WithoutDll/3.2.0.20170324": {
+      "sha512": "ocoYvoT9y82lk34mNHfC+ke6Is0/gJTpxP0rpF3fKaVxtpE/uC6HwMOV47rw0waXU3JsSyQeDXzS2Iwcct2T1Q==",
+      "type": "package",
+      "path": "opencvsharp3-withoutdll/3.2.0.20170324",
+      "files": [
+        "lib/net20/OpenCvSharp.Blob.dll",
+        "lib/net20/OpenCvSharp.Blob.pdb",
+        "lib/net20/OpenCvSharp.Blob.xml",
+        "lib/net20/OpenCvSharp.dll",
+        "lib/net20/OpenCvSharp.pdb",
+        "lib/net20/OpenCvSharp.xml",
+        "lib/net40/OpenCvSharp.Blob.dll",
+        "lib/net40/OpenCvSharp.Blob.pdb",
+        "lib/net40/OpenCvSharp.Blob.xml",
+        "lib/net40/OpenCvSharp.Extensions.dll",
+        "lib/net40/OpenCvSharp.Extensions.pdb",
+        "lib/net40/OpenCvSharp.Extensions.xml",
+        "lib/net40/OpenCvSharp.UserInterface.dll",
+        "lib/net40/OpenCvSharp.UserInterface.pdb",
+        "lib/net40/OpenCvSharp.UserInterface.xml",
+        "lib/net40/OpenCvSharp.dll",
+        "lib/net40/OpenCvSharp.pdb",
+        "lib/net40/OpenCvSharp.xml",
+        "lib/net46/OpenCvSharp.Blob.dll",
+        "lib/net46/OpenCvSharp.Blob.pdb",
+        "lib/net46/OpenCvSharp.Blob.xml",
+        "lib/net46/OpenCvSharp.Extensions.dll",
+        "lib/net46/OpenCvSharp.Extensions.pdb",
+        "lib/net46/OpenCvSharp.Extensions.xml",
+        "lib/net46/OpenCvSharp.UserInterface.dll",
+        "lib/net46/OpenCvSharp.UserInterface.pdb",
+        "lib/net46/OpenCvSharp.UserInterface.xml",
+        "lib/net46/OpenCvSharp.dll",
+        "lib/net46/OpenCvSharp.pdb",
+        "lib/net46/OpenCvSharp.xml",
+        "lib/netcoreapp1.0/OpenCvSharp.Blob.dll",
+        "lib/netcoreapp1.0/OpenCvSharp.Blob.pdb",
+        "lib/netcoreapp1.0/OpenCvSharp.Blob.xml",
+        "lib/netcoreapp1.0/OpenCvSharp.dll",
+        "lib/netcoreapp1.0/OpenCvSharp.pdb",
+        "lib/netcoreapp1.0/OpenCvSharp.xml",
+        "lib/netstandard1.6/OpenCvSharp.Blob.dll",
+        "lib/netstandard1.6/OpenCvSharp.Blob.pdb",
+        "lib/netstandard1.6/OpenCvSharp.Blob.xml",
+        "lib/netstandard1.6/OpenCvSharp.dll",
+        "lib/netstandard1.6/OpenCvSharp.pdb",
+        "lib/netstandard1.6/OpenCvSharp.xml",
+        "lib/uap10.0/OpenCvSharp.Blob.dll",
+        "lib/uap10.0/OpenCvSharp.Blob.pdb",
+        "lib/uap10.0/OpenCvSharp.Blob.xml",
+        "lib/uap10.0/OpenCvSharp.dll",
+        "lib/uap10.0/OpenCvSharp.pdb",
+        "lib/uap10.0/OpenCvSharp.xml",
+        "opencvsharp3-withoutdll.3.2.0.20170324.nupkg.sha512",
+        "opencvsharp3-withoutdll.nuspec"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -15376,8 +15709,15 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0"
+      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
+      "OpenCV.Win.Core >= 310.6.1",
+      "OpenCvSharp3-WithoutDll >= 3.2.0.20170324"
     ],
     "UAP,Version=v10.0": []
+  },
+  "tools": {},
+  "projectFileToolGroups": {},
+  "packageFolders": {
+    "C:\\Users\\Oana\\.nuget\\packages\\": {}
   }
 }

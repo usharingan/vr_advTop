@@ -70,6 +70,18 @@
     <AppxPackagedFile Include="C:\Users\Oana\.nuget\packages\Microsoft.Win32.Primitives\4.0.0\lib\dotnet\Microsoft.Win32.Primitives.dll">
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Oana\.nuget\packages\OpenCV.Win.Core\310.6.1\runtimes\win10-x86\native\opencv_core310.dll">
+      <PackagePath>opencv_core310.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Oana\.nuget\packages\OpenCV.Win.Core\310.6.1\runtimes\win10-x86\native\opencv_core310d.dll">
+      <PackagePath>opencv_core310d.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Oana\.nuget\packages\OpenCvSharp3-WithoutDll\3.2.0.20170324\lib\uap10.0\OpenCvSharp.Blob.dll">
+      <PackagePath>OpenCvSharp.Blob.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Oana\.nuget\packages\OpenCvSharp3-WithoutDll\3.2.0.20170324\lib\uap10.0\OpenCvSharp.dll">
+      <PackagePath>OpenCvSharp.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Oana\.nuget\packages\System.AppContext\4.0.0\lib\netcore50\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
     </AppxPackagedFile>

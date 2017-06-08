@@ -34,6 +34,9 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 
+using Windows.Devices.Enumeration;
+using Windows.UI.Core;
+
 namespace SDKTemplate
 {
     /// <summary>
@@ -100,17 +103,31 @@ namespace SDKTemplate
         // test
         private int count = 0;
 
+        //BasicFaceRecognizer model = FaceRecognizer.CreateEigenFaceRecognizer();
+
         private SemaphoreSlim snapshotSemaphore = new SemaphoreSlim(1);
-        // TEST
+        // Test
         private SemaphoreSlim writeToFileSemaphore = new SemaphoreSlim(1);
 
-
+   /*     // TEST camera rotation...
+        // a boolean member variable to track whether the camera is external to the device, such as a USB web cam
+        private bool _externalCamera;
+        // a boolean variable to track whether the preview should be mirrored, which is the case if a front-facing camera is used
+        private bool _mirroringPreview;
+        // a variable for storing a DeviceInformation object that represents the selected camera
+        DeviceInformation _cameraDevice;
+        private CameraRotationHelper _rotationHelper;
+    */
         /// <summary>
         /// Constructor
         /// Initializes a new instance of the <see cref="TrackFacesInWebcam"/> class.
         /// </summary>
         public TrackFacesInWebcam()
         {
+            
+            //test
+
+
             this.InitializeComponent();
 
             this.currentState = ScenarioState.Idle;
@@ -188,14 +205,29 @@ namespace SDKTemplate
 
             try
             {
+                // TEST
+       /*         var allVideoDevices = await DeviceInformation.FindAllAsync(DeviceClass.VideoCapture);
+                DeviceInformation desiredDevice = allVideoDevices.FirstOrDefault(x => x.EnclosureLocation != null
+                    && x.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front);
+                _cameraDevice = desiredDevice ?? allVideoDevices.FirstOrDefault();
+                if (_cameraDevice == null)
+                {
+                    System.Diagnostics.Debug.WriteLine("No camera device found!");
+                  //  return;
+                }
+                var settings = new MediaCaptureInitializationSettings { VideoDeviceId = _cameraDevice.Id };
+        */
                 this.mediaCapture = new MediaCapture();
 
                 // For this scenario, we only need Video (not microphone) so specify this in the initializer.
                 // NOTE: the appxmanifest only declares "webcam" under capabilities and if this is changed to include
                 // microphone (default constructor) you must add "microphone" to the manifest or initialization will fail.
+//
                 MediaCaptureInitializationSettings settings = new MediaCaptureInitializationSettings();
                 settings.StreamingCaptureMode = StreamingCaptureMode.Video;
+
                 await this.mediaCapture.InitializeAsync(settings);
+      //          this.mediaCapture.RecordLimitationExceeded += MediaCapture_RecordLimitationExceeded;
                 this.mediaCapture.Failed += this.MediaCapture_CameraStreamFailed;
             //  this.mediaCapture.CameraStreamStateChanged += this.MediaCapture_CameraStreamStateChanged;
 
@@ -208,7 +240,22 @@ namespace SDKTemplate
                 this.CamPreview.Source = this.mediaCapture;
                 await this.mediaCapture.StartPreviewAsync();
 
-            // tracker
+                // TEST
+       /*         // Handle camera device location
+                if (_cameraDevice.EnclosureLocation == null ||
+                    _cameraDevice.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Unknown)
+                {
+                    _externalCamera = true;
+                }
+                else
+                {
+                    _externalCamera = false;
+                    _mirroringPreview = (_cameraDevice.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front);
+                }
+                _rotationHelper = new CameraRotationHelper(_cameraDevice.EnclosureLocation);
+                _rotationHelper.OrientationChanged += RotationHelper_OrientationChanged;
+        */
+                // tracker
                 // Use a 66 millisecond interval for our timer, i.e. 15 frames per second
                 TimeSpan timerInterval = TimeSpan.FromMilliseconds(66);
                 this.frameProcessingTimer = Windows.System.Threading.ThreadPoolTimer.CreatePeriodicTimer(new Windows.System.Threading.TimerElapsedHandler(ProcessCurrentVideoFrame), timerInterval);
@@ -300,6 +347,12 @@ namespace SDKTemplate
                     try
                     {
                         await this.mediaCapture.GetPreviewFrameAsync(previewFrame);
+
+                        // Test10
+                        System.Diagnostics.Debug.WriteLine("mediaCapture.GetRecordRotation : " + mediaCapture.GetRecordRotation());
+                        System.Diagnostics.Debug.WriteLine("mediaCapture.GetPreviewRotation : " + mediaCapture.GetPreviewRotation());
+                        //mediaCapture.
+
                     } finally
                     {
                         snapshotSemaphore.Release();    
@@ -423,6 +476,13 @@ namespace SDKTemplate
 
                 foreach (DetectedFace face in foundFaces)
                 {
+
+                    // temp
+                  //  System.Diagnostics.Debug.WriteLine("face x : " + face.FaceBox.X);
+             //       System.Diagnostics.Debug.WriteLine("face y : " + face.FaceBox.Y);
+             //       System.Diagnostics.Debug.WriteLine("face z : " + face.FaceBox.Z); - does not exist
+                    
+
                     // Create a rectangle element for displaying the face box but since we're using a Canvas
                     // we must scale the rectangles according to the frames's actual size.
                     Rectangle box = new Rectangle();
@@ -742,4 +802,252 @@ namespace SDKTemplate
             return file; // necessary?
         } 
     }
+
+ /*   class CameraRotationHelper
+    {
+        private EnclosureLocation _cameraEnclosureLocation;
+        private DisplayInformation _displayInformation = DisplayInformation.GetForCurrentView();
+        private SimpleOrientationSensor _orientationSensor = SimpleOrientationSensor.GetDefault();
+        public event EventHandler<bool> OrientationChanged;
+
+        public CameraRotationHelper(EnclosureLocation cameraEnclosureLocation)
+        {
+            _cameraEnclosureLocation = cameraEnclosureLocation;
+            if (!IsEnclosureLocationExternal(_cameraEnclosureLocation))
+            {
+                _orientationSensor.OrientationChanged += SimpleOrientationSensor_OrientationChanged;
+            }
+            _displayInformation.OrientationChanged += DisplayInformation_OrientationChanged;
+        }
+
+        private void SimpleOrientationSensor_OrientationChanged(SimpleOrientationSensor sender, SimpleOrientationSensorOrientationChangedEventArgs args)
+        {
+            if (args.Orientation != SimpleOrientation.Faceup && args.Orientation != SimpleOrientation.Facedown)
+            {
+                HandleOrientationChanged(false);
+            }
+        }
+
+        private void DisplayInformation_OrientationChanged(DisplayInformation sender, object args)
+        {
+            HandleOrientationChanged(true);
+        }
+
+        private void HandleOrientationChanged(bool updatePreviewStreamRequired)
+        {
+            var handler = OrientationChanged;
+            if (handler != null)
+            {
+                handler(this, updatePreviewStreamRequired);
+            }
+        }
+
+        public static bool IsEnclosureLocationExternal(EnclosureLocation enclosureLocation)
+        {
+            return (enclosureLocation == null || enclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Unknown);
+        }
+
+        private bool IsCameraMirrored()
+        {
+            // Front panel cameras are mirrored by default
+            return (_cameraEnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front);
+        }
+
+        private SimpleOrientation GetCameraOrientationRelativeToNativeOrientation()
+        {
+            // Get the rotation angle of the camera enclosure
+            var enclosureAngle = ConvertClockwiseDegreesToSimpleOrientation((int)_cameraEnclosureLocation.RotationAngleInDegreesClockwise);
+
+            // Account for the fact that, on portrait-first devices, the built in camera sensor is read at a 90 degree offset to the native orientation
+            if (_displayInformation.NativeOrientation == DisplayOrientations.Portrait && !IsEnclosureLocationExternal(_cameraEnclosureLocation))
+            {
+                return AddOrientations(SimpleOrientation.Rotated90DegreesCounterclockwise, enclosureAngle);
+            }
+            else
+            {
+                return AddOrientations(SimpleOrientation.NotRotated, enclosureAngle);
+            }
+        }
+
+        // Gets the rotation to rotate ui elements
+        public SimpleOrientation GetUIOrientation()
+        {
+            if (IsEnclosureLocationExternal(_cameraEnclosureLocation))
+            {
+                // Cameras that are not attached to the device do not rotate along with it, so apply no rotation
+                return SimpleOrientation.NotRotated;
+            }
+
+            // Return the difference between the orientation of the device and the orientation of the app display
+            var deviceOrientation = _orientationSensor.GetCurrentOrientation();
+            var displayOrientation = ConvertDisplayOrientationToSimpleOrientation(_displayInformation.CurrentOrientation);
+            return SubOrientations(displayOrientation, deviceOrientation);
+        }
+
+        // Gets the rotation of the camera to rotate pictures/videos when saving to file
+        public SimpleOrientation GetCameraCaptureOrientation()
+        {
+            if (IsEnclosureLocationExternal(_cameraEnclosureLocation))
+            {
+                // Cameras that are not attached to the device do not rotate along with it, so apply no rotation
+                return SimpleOrientation.NotRotated;
+            }
+
+            // Get the device orienation offset by the camera hardware offset
+            var deviceOrientation = _orientationSensor.GetCurrentOrientation();
+            var result = SubOrientations(deviceOrientation, GetCameraOrientationRelativeToNativeOrientation());
+
+            // If the preview is being mirrored for a front-facing camera, then the rotation should be inverted
+            if (IsCameraMirrored())
+            {
+                result = MirrorOrientation(result);
+            }
+            return result;
+        }
+
+        // Gets the rotation of the camera to display the camera preview
+        public SimpleOrientation GetCameraPreviewOrientation()
+        {
+            if (IsEnclosureLocationExternal(_cameraEnclosureLocation))
+            {
+                // Cameras that are not attached to the device do not rotate along with it, so apply no rotation
+                return SimpleOrientation.NotRotated;
+            }
+
+            // Get the app display rotation offset by the camera hardware offset
+            var result = ConvertDisplayOrientationToSimpleOrientation(_displayInformation.CurrentOrientation);
+            result = SubOrientations(result, GetCameraOrientationRelativeToNativeOrientation());
+
+            // If the preview is being mirrored for a front-facing camera, then the rotation should be inverted
+            if (IsCameraMirrored())
+            {
+                result = MirrorOrientation(result);
+            }
+            return result;
+        }
+
+        public static PhotoOrientation ConvertSimpleOrientationToPhotoOrientation(SimpleOrientation orientation)
+        {
+            switch (orientation)
+            {
+                case SimpleOrientation.Rotated90DegreesCounterclockwise:
+                    return PhotoOrientation.Rotate90;
+                case SimpleOrientation.Rotated180DegreesCounterclockwise:
+                    return PhotoOrientation.Rotate180;
+                case SimpleOrientation.Rotated270DegreesCounterclockwise:
+                    return PhotoOrientation.Rotate270;
+                case SimpleOrientation.NotRotated:
+                default:
+                    return PhotoOrientation.Normal;
+            }
+        }
+
+        public static int ConvertSimpleOrientationToClockwiseDegrees(SimpleOrientation orientation)
+        {
+            switch (orientation)
+            {
+                case SimpleOrientation.Rotated90DegreesCounterclockwise:
+                    return 270;
+                case SimpleOrientation.Rotated180DegreesCounterclockwise:
+                    return 180;
+                case SimpleOrientation.Rotated270DegreesCounterclockwise:
+                    return 90;
+                case SimpleOrientation.NotRotated:
+                default:
+                    return 0;
+            }
+        }
+
+        private SimpleOrientation ConvertDisplayOrientationToSimpleOrientation(DisplayOrientations orientation)
+        {
+            SimpleOrientation result;
+            switch (orientation)
+            {
+                case DisplayOrientations.Landscape:
+                    result = SimpleOrientation.NotRotated;
+                    break;
+                case DisplayOrientations.PortraitFlipped:
+                    result = SimpleOrientation.Rotated90DegreesCounterclockwise;
+                    break;
+                case DisplayOrientations.LandscapeFlipped:
+                    result = SimpleOrientation.Rotated180DegreesCounterclockwise;
+                    break;
+                case DisplayOrientations.Portrait:
+                default:
+                    result = SimpleOrientation.Rotated270DegreesCounterclockwise;
+                    break;
+            }
+
+            // Above assumes landscape; offset is needed if native orientation is portrait
+            if (_displayInformation.NativeOrientation == DisplayOrientations.Portrait)
+            {
+                result = AddOrientations(result, SimpleOrientation.Rotated90DegreesCounterclockwise);
+            }
+
+            return result;
+        }
+
+        private static SimpleOrientation MirrorOrientation(SimpleOrientation orientation)
+        {
+            // This only affects the 90 and 270 degree cases, because rotating 0 and 180 degrees is the same clockwise and counter-clockwise
+            switch (orientation)
+            {
+                case SimpleOrientation.Rotated90DegreesCounterclockwise:
+                    return SimpleOrientation.Rotated270DegreesCounterclockwise;
+                case SimpleOrientation.Rotated270DegreesCounterclockwise:
+                    return SimpleOrientation.Rotated90DegreesCounterclockwise;
+            }
+            return orientation;
+        }
+
+        private static SimpleOrientation AddOrientations(SimpleOrientation a, SimpleOrientation b)
+        {
+            var aRot = ConvertSimpleOrientationToClockwiseDegrees(a);
+            var bRot = ConvertSimpleOrientationToClockwiseDegrees(b);
+            var result = (aRot + bRot) % 360;
+            return ConvertClockwiseDegreesToSimpleOrientation(result);
+        }
+
+        private static SimpleOrientation SubOrientations(SimpleOrientation a, SimpleOrientation b)
+        {
+            var aRot = ConvertSimpleOrientationToClockwiseDegrees(a);
+            var bRot = ConvertSimpleOrientationToClockwiseDegrees(b);
+            //add 360 to ensure the modulus operator does not operate on a negative
+            var result = (360 + (aRot - bRot)) % 360;
+            return ConvertClockwiseDegreesToSimpleOrientation(result);
+        }
+
+        private static VideoRotation ConvertSimpleOrientationToVideoRotation(SimpleOrientation orientation)
+        {
+            switch (orientation)
+            {
+                case SimpleOrientation.Rotated90DegreesCounterclockwise:
+                    return VideoRotation.Clockwise270Degrees;
+                case SimpleOrientation.Rotated180DegreesCounterclockwise:
+                    return VideoRotation.Clockwise180Degrees;
+                case SimpleOrientation.Rotated270DegreesCounterclockwise:
+                    return VideoRotation.Clockwise90Degrees;
+                case SimpleOrientation.NotRotated:
+                default:
+                    return VideoRotation.None;
+            }
+        }
+
+        private static SimpleOrientation ConvertClockwiseDegreesToSimpleOrientation(int orientation)
+        {
+            switch (orientation)
+            {
+                case 270:
+                    return SimpleOrientation.Rotated90DegreesCounterclockwise;
+                case 180:
+                    return SimpleOrientation.Rotated180DegreesCounterclockwise;
+                case 90:
+                    return SimpleOrientation.Rotated270DegreesCounterclockwise;
+                case 0:
+                default:
+                    return SimpleOrientation.NotRotated;
+            }
+        }
+    }
+    */
 }

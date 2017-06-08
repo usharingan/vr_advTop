@@ -442,6 +442,12 @@ D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.dll
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\Microsoft.VisualBasic.dll
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\Microsoft.Win32.Primitives.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\opencv_core310.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\opencv_core310d.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\OpenCvSharp.Blob.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\OpenCvSharp.Blob.pdb
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\OpenCvSharp.dll
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\OpenCvSharp.pdb
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.AppContext.dll
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.dll
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Collections.Concurrent.dll

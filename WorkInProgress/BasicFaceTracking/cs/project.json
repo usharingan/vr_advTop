@@ -1,6 +1,8 @@
 ﻿{
   "dependencies": {
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
+    "OpenCV.Win.Core": "310.6.1",
+    "OpenCvSharp3-WithoutDll": "3.2.0.20170324"
   },
   "frameworks": {
     "uap10.0": {}
