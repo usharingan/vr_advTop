@@ -109,23 +109,35 @@ namespace SDKTemplate
         // Test
         private SemaphoreSlim writeToFileSemaphore = new SemaphoreSlim(1);
 
-   /*     // TEST camera rotation...
-        // a boolean member variable to track whether the camera is external to the device, such as a USB web cam
-        private bool _externalCamera;
-        // a boolean variable to track whether the preview should be mirrored, which is the case if a front-facing camera is used
-        private bool _mirroringPreview;
-        // a variable for storing a DeviceInformation object that represents the selected camera
-        DeviceInformation _cameraDevice;
-        private CameraRotationHelper _rotationHelper;
-    */
+        /*     // TEST camera rotation...
+             // a boolean member variable to track whether the camera is external to the device, such as a USB web cam
+             private bool _externalCamera;
+             // a boolean variable to track whether the preview should be mirrored, which is the case if a front-facing camera is used
+             private bool _mirroringPreview;
+             // a variable for storing a DeviceInformation object that represents the selected camera
+             DeviceInformation _cameraDevice;
+             private CameraRotationHelper _rotationHelper;
+         */
+        IList<DetectedFace> facesPrevFrame;
+        int[] faceIDsPrevFrame;
+        int[] faceIDsCurrFrame;
+        Vector2 faceMovementDirection;
+        bool firstFrame;
+        int faceCounter;
+
         /// <summary>
         /// Constructor
         /// Initializes a new instance of the <see cref="TrackFacesInWebcam"/> class.
         /// </summary>
         public TrackFacesInWebcam()
         {
-            
+
             //test
+            facesPrevFrame = null;
+            faceIDsCurrFrame = null;
+            faceIDsPrevFrame = null;
+            faceMovementDirection = new Vector2(0.0f,0.0f);
+            firstFrame = true;
 
 
             this.InitializeComponent();
@@ -459,6 +471,10 @@ namespace SDKTemplate
         /// <param name="foundFaces">List of detected faces; output from FaceTracker</param>
         private void SetupVisualization(Windows.Foundation.Size framePizelSize, IList<DetectedFace> foundFaces)
         {
+            // TeST
+            faceIDsCurrFrame = new int[] { };
+            faceIDsPrevFrame = new int[] { };
+
             this.VisualizationCanvas.Children.Clear();
 
             double actualWidth = this.VisualizationCanvas.ActualWidth;
@@ -469,19 +485,32 @@ namespace SDKTemplate
                 double widthScale = framePizelSize.Width / actualWidth;
                 double heightScale = framePizelSize.Height / actualHeight;
 
-                // sort faces according to their X position
+                // Sort faces according to their X position
                 foundFaces = foundFaces.OrderBy(face => face.FaceBox.X).ToList();
+
+                // TeST
+                if (firstFrame) {
+    //                faceCounter = 0;
+                    faceIDsCurrFrame = new int[foundFaces.Count];
+                    faceIDsPrevFrame = new int[foundFaces.Count];
+                    for (int i = 0; i < foundFaces.Count; i++) {
+                        faceIDsCurrFrame[i] = i;
+                        faceIDsPrevFrame[i] = i;
+                    }
+                }
+    //            int count = faceCounter;
+                faceIDsCurrFrame = new int[foundFaces.Count];
+                faceIDsPrevFrame = new int[foundFaces.Count];
 
                 int count = 0;
 
                 foreach (DetectedFace face in foundFaces)
                 {
-
-                    // temp
-                  //  System.Diagnostics.Debug.WriteLine("face x : " + face.FaceBox.X);
-             //       System.Diagnostics.Debug.WriteLine("face y : " + face.FaceBox.Y);
-             //       System.Diagnostics.Debug.WriteLine("face z : " + face.FaceBox.Z); - does not exist
-                    
+                    // TeST
+                    //
+                    if (!firstFrame) {
+                        faceIDsCurrFrame = getCorrectFaceIds(foundFaces, facesPrevFrame, faceIDsPrevFrame, faceMovementDirection);
+                    }
 
                     // Create a rectangle element for displaying the face box but since we're using a Canvas
                     // we must scale the rectangles according to the frames's actual size.
@@ -496,10 +525,13 @@ namespace SDKTemplate
 
                     this.VisualizationCanvas.Children.Add(box);
 
+                    // TEST
+                  //  System.Diagnostics.Debug.WriteLine("x Position, FaceBox : " + face.FaceBox.X );
+
                     // Index of faces - Visualization: starting from 0, from left to right
                     TextBlock txtBlock = new TextBlock();
                     txtBlock.FontSize = 18;
-                    txtBlock.Text = ""+count;
+                    txtBlock.Text = "" + faceIDsCurrFrame[count]/*count*/;  // TODO! - replace
                     txtBlock.Foreground = new SolidColorBrush(Windows.UI.Colors.Red);
                     txtBlock.Width = (uint)(face.FaceBox.Width / widthScale);
                     txtBlock.Height = (uint)(face.FaceBox.Height / heightScale);
@@ -507,11 +539,97 @@ namespace SDKTemplate
                     txtBlock.Margin = new Thickness((uint)(face.FaceBox.X / widthScale), (uint)(face.FaceBox.Y / heightScale), 0, 0);
                     this.VisualizationCanvas.Children.Add(txtBlock);
 
-                    count++;
+                    count++; // TODO! - replace
+
+                    //TeST
+                    facesPrevFrame = foundFaces;
+                    faceIDsPrevFrame = faceIDsCurrFrame;
+
+                    // TEST
+                    System.Diagnostics.Debug.WriteLine("ids current frame: ");
+                    for (int l = 0; l < faceIDsCurrFrame.Length; l++) {
+                        System.Diagnostics.Debug.WriteLine(faceIDsCurrFrame[l]);
+                    }
+
+                    firstFrame = false;
                 }
             }
         }
 
+        // Self-written Algorithm, for unique ID allocation
+        private int[] getCorrectFaceIds(IList<DetectedFace> foundFaces, IList<DetectedFace> facesPrevFrame, int[] faceIDsPrevFrame, Vector2 faceMoveDir) {
+            int[] currectFaceID = new int[foundFaces.Count];
+
+            // same number of faces
+            if (foundFaces.Count == facesPrevFrame.Count) {
+                for (int i = 0; i < foundFaces.Count; i++) {
+                    // calculate new face movement direction
+                    faceMovementDirection = new Vector2(foundFaces[i].FaceBox.X - facesPrevFrame[i].FaceBox.X, foundFaces[i].FaceBox.Y - facesPrevFrame[i].FaceBox.Y);
+                }
+                // indices remain the same as in the previous frame
+                currectFaceID = faceIDsPrevFrame;
+            }
+            // more faces than before
+            else if (foundFaces.Count > facesPrevFrame.Count) {
+                // ( Annahme: Leute bleiben am selben Platz sitzen )
+
+                // faces bewegen sich nach links
+                // Camera bewegt sich nach rechts
+                if (faceMovementDirection.X < 0){
+                    // letzte vergebene ID holen
+                    int k = faceIDsPrevFrame[faceIDsPrevFrame.Length - 1];
+                    for (int j = (facesPrevFrame.Count - 1); j < foundFaces.Count; j++)
+                    { // Itearion durch alle neu hinzugefuegten faces
+                        currectFaceID[j] = ++k;
+                    }
+                }
+                // faces bewegen sich nach rechts
+                // Camera bewegt sich nach links
+                else if (faceMovementDirection.X > 0) {
+                    // die erste vergeben ID des letzten Frames holen
+                    int k = faceIDsPrevFrame[0];
+                    for (int j = 0; j < foundFaces.Count; j++) {
+                        currectFaceID[j] = k++;
+                    }
+              /*      for (int j = (foundFaces.Count - facesPrevFrame.Count) - 1; j >= 0; j++)
+                    { // Itearion durch alle neu hinzugefuegten faces
+                        currectFaceID[j] = --k;
+                    }
+                    int l = 0;
+                    for (int j = (foundFaces.Count - facesPrevFrame.Count); j < foundFaces.Count; j++)
+                    {// Itearion durch alle restlichen faces, die gleich geblieben sind wie im letzten Frame
+                        currectFaceID[j] = faceIDsPrevFrame[l++];
+                    }*/
+                }
+                // keep the old face movement direction, until same number of faces in consecutive frames comes and it can be recalculated
+                faceMovementDirection = faceMoveDir;
+            }
+            // less faces than before
+            else if (foundFaces.Count < facesPrevFrame.Count) {
+                // faces bewegen sich nach links
+                // Camera bewegt sich nach rechts
+                if (faceMovementDirection.X < 0){
+                    // die erste in dieser Frame nicht weggeschnittene ID aus dem letzten Frame holen
+                    int k = faceIDsPrevFrame[facesPrevFrame.Count - foundFaces.Count];
+                    for (int j = 0; j < foundFaces.Count; j++) {
+                        currectFaceID[j] =/* faceIDsPrevFrame[*/k++/*]*/;
+                    }
+                }
+                // faces bewegen sich nach rechts
+                // Camera bewegt sich nach links
+                else if (faceMovementDirection.X > 0) {
+                    // die erste vergeben ID des letzten Frames holen
+                    int k = faceIDsPrevFrame[0];
+                    for (int j = 0; j < foundFaces.Count; j++) {
+                        currectFaceID[j] = /*faceIDsPrevFrame[*/k++/*]*/;
+                    }
+                }
+                // keep the old face movement direction
+                faceMovementDirection = faceMoveDir;
+            }
+
+            return currectFaceID;
+        }
 
         //Oana: TODO: zeichne box auf face in PNG
         // DETECTOR
