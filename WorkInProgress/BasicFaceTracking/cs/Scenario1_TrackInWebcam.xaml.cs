@@ -109,21 +109,15 @@ namespace SDKTemplate
         // Test
         private SemaphoreSlim writeToFileSemaphore = new SemaphoreSlim(1);
 
-        /*     // TEST camera rotation...
-             // a boolean member variable to track whether the camera is external to the device, such as a USB web cam
-             private bool _externalCamera;
-             // a boolean variable to track whether the preview should be mirrored, which is the case if a front-facing camera is used
-             private bool _mirroringPreview;
-             // a variable for storing a DeviceInformation object that represents the selected camera
-             DeviceInformation _cameraDevice;
-             private CameraRotationHelper _rotationHelper;
-         */
         IList<DetectedFace> facesPrevFrame;
         int[] faceIDsPrevFrame;
         int[] faceIDsCurrFrame;
         Vector2 faceMovementDirection;
+        Vector2 faceMovementDirection30framesAgo;
+        Vector2 position30framesAgo;
         bool firstFrame;
         int faceCounter;
+        int frameCounter;
 
         /// <summary>
         /// Constructor
@@ -137,7 +131,11 @@ namespace SDKTemplate
             faceIDsCurrFrame = null;
             faceIDsPrevFrame = null;
             faceMovementDirection = new Vector2(0.0f,0.0f);
+            faceMovementDirection30framesAgo = new Vector2(0.0f, 0.0f);
+            position30framesAgo = new Vector2(0.0f, 0.0f);
+
             firstFrame = true;
+            frameCounter = 0;
 
 
             this.InitializeComponent();
@@ -217,18 +215,6 @@ namespace SDKTemplate
 
             try
             {
-                // TEST
-       /*         var allVideoDevices = await DeviceInformation.FindAllAsync(DeviceClass.VideoCapture);
-                DeviceInformation desiredDevice = allVideoDevices.FirstOrDefault(x => x.EnclosureLocation != null
-                    && x.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front);
-                _cameraDevice = desiredDevice ?? allVideoDevices.FirstOrDefault();
-                if (_cameraDevice == null)
-                {
-                    System.Diagnostics.Debug.WriteLine("No camera device found!");
-                  //  return;
-                }
-                var settings = new MediaCaptureInitializationSettings { VideoDeviceId = _cameraDevice.Id };
-        */
                 this.mediaCapture = new MediaCapture();
 
                 // For this scenario, we only need Video (not microphone) so specify this in the initializer.
@@ -237,7 +223,7 @@ namespace SDKTemplate
 //
                 MediaCaptureInitializationSettings settings = new MediaCaptureInitializationSettings();
                 settings.StreamingCaptureMode = StreamingCaptureMode.Video;
-
+                
                 await this.mediaCapture.InitializeAsync(settings);
       //          this.mediaCapture.RecordLimitationExceeded += MediaCapture_RecordLimitationExceeded;
                 this.mediaCapture.Failed += this.MediaCapture_CameraStreamFailed;
@@ -252,25 +238,17 @@ namespace SDKTemplate
                 this.CamPreview.Source = this.mediaCapture;
                 await this.mediaCapture.StartPreviewAsync();
 
-                // TEST
-       /*         // Handle camera device location
-                if (_cameraDevice.EnclosureLocation == null ||
-                    _cameraDevice.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Unknown)
-                {
-                    _externalCamera = true;
-                }
-                else
-                {
-                    _externalCamera = false;
-                    _mirroringPreview = (_cameraDevice.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front);
-                }
-                _rotationHelper = new CameraRotationHelper(_cameraDevice.EnclosureLocation);
-                _rotationHelper.OrientationChanged += RotationHelper_OrientationChanged;
-        */
                 // tracker
                 // Use a 66 millisecond interval for our timer, i.e. 15 frames per second
                 TimeSpan timerInterval = TimeSpan.FromMilliseconds(66);
                 this.frameProcessingTimer = Windows.System.Threading.ThreadPoolTimer.CreatePeriodicTimer(new Windows.System.Threading.TimerElapsedHandler(ProcessCurrentVideoFrame), timerInterval);
+
+                var props = this.mediaCapture.VideoDeviceController.GetAvailableMediaStreamProperties(MediaStreamType.VideoPreview).OfType<VideoEncodingProperties>();
+                var known = props.Where(p => !p.Subtype.Equals("Unknown", StringComparison.OrdinalIgnoreCase));
+                var best = known.OrderByDescending(k => k.Width * k.Height).FirstOrDefault();
+                await this.mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoPreview, best);
+
+
             }
             catch (System.UnauthorizedAccessException)
             {
@@ -283,6 +261,8 @@ namespace SDKTemplate
                 this.rootPage.NotifyUser(ex.ToString(), NotifyType.ErrorMessage);
                 successful = false;
             }
+
+            
 
             return successful;
         }
@@ -318,7 +298,7 @@ namespace SDKTemplate
             this.CamPreview.Source = null;
             this.mediaCapture = null;
             this.CameraStreamingButton.IsEnabled = true;
-
+           
         }
 
         // tracker
@@ -359,12 +339,7 @@ namespace SDKTemplate
                     try
                     {
                         await this.mediaCapture.GetPreviewFrameAsync(previewFrame);
-
-                        // Test10
-                        System.Diagnostics.Debug.WriteLine("mediaCapture.GetRecordRotation : " + mediaCapture.GetRecordRotation());
-                        System.Diagnostics.Debug.WriteLine("mediaCapture.GetPreviewRotation : " + mediaCapture.GetPreviewRotation());
-                        //mediaCapture.
-
+                       
                     } finally
                     {
                         snapshotSemaphore.Release();    
@@ -471,10 +446,6 @@ namespace SDKTemplate
         /// <param name="foundFaces">List of detected faces; output from FaceTracker</param>
         private void SetupVisualization(Windows.Foundation.Size framePizelSize, IList<DetectedFace> foundFaces)
         {
-            // TeST
-            faceIDsCurrFrame = new int[] { };
-            faceIDsPrevFrame = new int[] { };
-
             this.VisualizationCanvas.Children.Clear();
 
             double actualWidth = this.VisualizationCanvas.ActualWidth;
@@ -490,7 +461,6 @@ namespace SDKTemplate
 
                 // TeST
                 if (firstFrame) {
-    //                faceCounter = 0;
                     faceIDsCurrFrame = new int[foundFaces.Count];
                     faceIDsPrevFrame = new int[foundFaces.Count];
                     for (int i = 0; i < foundFaces.Count; i++) {
@@ -498,19 +468,19 @@ namespace SDKTemplate
                         faceIDsPrevFrame[i] = i;
                     }
                 }
-    //            int count = faceCounter;
-                faceIDsCurrFrame = new int[foundFaces.Count];
-                faceIDsPrevFrame = new int[foundFaces.Count];
-
+                else {
+                    faceIDsCurrFrame = getCorrectFaceIds(foundFaces, facesPrevFrame, faceIDsPrevFrame, frameCounter/*, faceMovementDirection*/);
+                }
                 int count = 0;
 
                 foreach (DetectedFace face in foundFaces)
                 {
                     // TeST
                     //
-                    if (!firstFrame) {
-                        faceIDsCurrFrame = getCorrectFaceIds(foundFaces, facesPrevFrame, faceIDsPrevFrame, faceMovementDirection);
-                    }
+                    if (frameCounter == 0)
+                    {
+                        position30framesAgo = new Vector2(face.FaceBox.X, face.FaceBox.Y);
+                    } 
 
                     // Create a rectangle element for displaying the face box but since we're using a Canvas
                     // we must scale the rectangles according to the frames's actual size.
@@ -526,12 +496,14 @@ namespace SDKTemplate
                     this.VisualizationCanvas.Children.Add(box);
 
                     // TEST
-                  //  System.Diagnostics.Debug.WriteLine("x Position, FaceBox : " + face.FaceBox.X );
+      //              System.Diagnostics.Debug.WriteLine("x Position, FaceBox (int): " + face.FaceBox.X );
+      //              System.Diagnostics.Debug.WriteLine("x Position, FaceBox (float): " + (float)face.FaceBox.X);
+
 
                     // Index of faces - Visualization: starting from 0, from left to right
                     TextBlock txtBlock = new TextBlock();
                     txtBlock.FontSize = 18;
-                    txtBlock.Text = "" + faceIDsCurrFrame[count]/*count*/;  // TODO! - replace
+                    txtBlock.Text = "" + faceIDsCurrFrame[count];  // TODO! - replace
                     txtBlock.Foreground = new SolidColorBrush(Windows.UI.Colors.Red);
                     txtBlock.Width = (uint)(face.FaceBox.Width / widthScale);
                     txtBlock.Height = (uint)(face.FaceBox.Height / heightScale);
@@ -539,35 +511,47 @@ namespace SDKTemplate
                     txtBlock.Margin = new Thickness((uint)(face.FaceBox.X / widthScale), (uint)(face.FaceBox.Y / heightScale), 0, 0);
                     this.VisualizationCanvas.Children.Add(txtBlock);
 
-                    count++; // TODO! - replace
-
-                    //TeST
-                    facesPrevFrame = foundFaces;
-                    faceIDsPrevFrame = faceIDsCurrFrame;
-
-                    // TEST
-                    System.Diagnostics.Debug.WriteLine("ids current frame: ");
-                    for (int l = 0; l < faceIDsCurrFrame.Length; l++) {
-                        System.Diagnostics.Debug.WriteLine(faceIDsCurrFrame[l]);
-                    }
-
-                    firstFrame = false;
+                    count++; // TODO! - replace   
                 }
+                //TeST
+                facesPrevFrame = foundFaces;
+                faceIDsPrevFrame = faceIDsCurrFrame;
+
+                // TEST
+          /*      System.Diagnostics.Debug.WriteLine("ids current frame: ");
+                for (int l = 0; l < faceIDsCurrFrame.Length; l++)
+                {
+                    System.Diagnostics.Debug.WriteLine(faceIDsCurrFrame[l]);
+                }*/
+
+                firstFrame = false;
             }
+
+            frameCounter++;
         }
 
         // Self-written Algorithm, for unique ID allocation
-        private int[] getCorrectFaceIds(IList<DetectedFace> foundFaces, IList<DetectedFace> facesPrevFrame, int[] faceIDsPrevFrame, Vector2 faceMoveDir) {
-            int[] currectFaceID = new int[foundFaces.Count];
+        private int[] getCorrectFaceIds(IList<DetectedFace> foundFaces, IList<DetectedFace> facesPrevFrame, int[] faceIDsPrevFrame, int frameCounter/*, Vector2 faceMoveDir*/) {
+            int[] currectFaceIDs = new int[foundFaces.Count];
 
             // same number of faces
             if (foundFaces.Count == facesPrevFrame.Count) {
-                for (int i = 0; i < foundFaces.Count; i++) {
-                    // calculate new face movement direction
-                    faceMovementDirection = new Vector2(foundFaces[i].FaceBox.X - facesPrevFrame[i].FaceBox.X, foundFaces[i].FaceBox.Y - facesPrevFrame[i].FaceBox.Y);
+                if(foundFaces.Count != 0)
+                {
+                    faceMovementDirection = Vector2.Subtract(new Vector2(foundFaces[0].FaceBox.X, foundFaces[0].FaceBox.Y),
+                                                             new Vector2(facesPrevFrame[0].FaceBox.X, facesPrevFrame[0].FaceBox.Y));
+
+                    if (frameCounter % 15 == 0)
+                    {
+                        faceMovementDirection30framesAgo = Vector2.Subtract(new Vector2(foundFaces[0].FaceBox.X, foundFaces[0].FaceBox.Y),
+                                                                            position30framesAgo);
+                        System.Diagnostics.Debug.WriteLine("faceMovementDirection30framesAgo: " + faceMovementDirection30framesAgo);
+
+                        position30framesAgo = new Vector2(foundFaces[0].FaceBox.X, foundFaces[0].FaceBox.Y);
+                    }
                 }
                 // indices remain the same as in the previous frame
-                currectFaceID = faceIDsPrevFrame;
+                currectFaceIDs = faceIDsPrevFrame;
             }
             // more faces than before
             else if (foundFaces.Count > facesPrevFrame.Count) {
@@ -575,60 +559,54 @@ namespace SDKTemplate
 
                 // faces bewegen sich nach links
                 // Camera bewegt sich nach rechts
-                if (faceMovementDirection.X < 0){
-                    // letzte vergebene ID holen
-                    int k = faceIDsPrevFrame[faceIDsPrevFrame.Length - 1];
-                    for (int j = (facesPrevFrame.Count - 1); j < foundFaces.Count; j++)
+                if (faceMovementDirection.X < 0 || faceMovementDirection30framesAgo.X < 0)
+                {
+                    // erste ID aus der letzten Frame holen
+                    int k = faceIDsPrevFrame[0];
+                    for (int j = 0; j < foundFaces.Count; j++)
                     { // Itearion durch alle neu hinzugefuegten faces
-                        currectFaceID[j] = ++k;
+
+                        // TEST
+                //        System.Diagnostics.Debug.WriteLine("K: "+k);
+
+                        currectFaceIDs[j] = k++;
                     }
                 }
                 // faces bewegen sich nach rechts
                 // Camera bewegt sich nach links
-                else if (faceMovementDirection.X > 0) {
+                else if (faceMovementDirection.X > 0 || faceMovementDirection30framesAgo.X > 0) {
                     // die erste vergeben ID des letzten Frames holen
                     int k = faceIDsPrevFrame[0];
+                    k = k - (foundFaces.Count - facesPrevFrame.Count);
                     for (int j = 0; j < foundFaces.Count; j++) {
-                        currectFaceID[j] = k++;
+                        currectFaceIDs[j] = k++;
                     }
-              /*      for (int j = (foundFaces.Count - facesPrevFrame.Count) - 1; j >= 0; j++)
-                    { // Itearion durch alle neu hinzugefuegten faces
-                        currectFaceID[j] = --k;
-                    }
-                    int l = 0;
-                    for (int j = (foundFaces.Count - facesPrevFrame.Count); j < foundFaces.Count; j++)
-                    {// Itearion durch alle restlichen faces, die gleich geblieben sind wie im letzten Frame
-                        currectFaceID[j] = faceIDsPrevFrame[l++];
-                    }*/
                 }
-                // keep the old face movement direction, until same number of faces in consecutive frames comes and it can be recalculated
-                faceMovementDirection = faceMoveDir;
             }
             // less faces than before
             else if (foundFaces.Count < facesPrevFrame.Count) {
                 // faces bewegen sich nach links
                 // Camera bewegt sich nach rechts
-                if (faceMovementDirection.X < 0){
+                if (faceMovementDirection.X < 0 || faceMovementDirection30framesAgo.X < 0)
+                {
                     // die erste in dieser Frame nicht weggeschnittene ID aus dem letzten Frame holen
                     int k = faceIDsPrevFrame[facesPrevFrame.Count - foundFaces.Count];
                     for (int j = 0; j < foundFaces.Count; j++) {
-                        currectFaceID[j] =/* faceIDsPrevFrame[*/k++/*]*/;
+                        currectFaceIDs[j] = k++;
                     }
                 }
                 // faces bewegen sich nach rechts
                 // Camera bewegt sich nach links
-                else if (faceMovementDirection.X > 0) {
+                else if (faceMovementDirection.X > 0 || faceMovementDirection30framesAgo.X > 0) {
                     // die erste vergeben ID des letzten Frames holen
                     int k = faceIDsPrevFrame[0];
                     for (int j = 0; j < foundFaces.Count; j++) {
-                        currectFaceID[j] = /*faceIDsPrevFrame[*/k++/*]*/;
+                        currectFaceIDs[j] = k++;
                     }
                 }
-                // keep the old face movement direction
-                faceMovementDirection = faceMoveDir;
             }
 
-            return currectFaceID;
+            return currectFaceIDs;
         }
 
         //Oana: TODO: zeichne box auf face in PNG
@@ -921,251 +899,4 @@ namespace SDKTemplate
         } 
     }
 
- /*   class CameraRotationHelper
-    {
-        private EnclosureLocation _cameraEnclosureLocation;
-        private DisplayInformation _displayInformation = DisplayInformation.GetForCurrentView();
-        private SimpleOrientationSensor _orientationSensor = SimpleOrientationSensor.GetDefault();
-        public event EventHandler<bool> OrientationChanged;
-
-        public CameraRotationHelper(EnclosureLocation cameraEnclosureLocation)
-        {
-            _cameraEnclosureLocation = cameraEnclosureLocation;
-            if (!IsEnclosureLocationExternal(_cameraEnclosureLocation))
-            {
-                _orientationSensor.OrientationChanged += SimpleOrientationSensor_OrientationChanged;
-            }
-            _displayInformation.OrientationChanged += DisplayInformation_OrientationChanged;
-        }
-
-        private void SimpleOrientationSensor_OrientationChanged(SimpleOrientationSensor sender, SimpleOrientationSensorOrientationChangedEventArgs args)
-        {
-            if (args.Orientation != SimpleOrientation.Faceup && args.Orientation != SimpleOrientation.Facedown)
-            {
-                HandleOrientationChanged(false);
-            }
-        }
-
-        private void DisplayInformation_OrientationChanged(DisplayInformation sender, object args)
-        {
-            HandleOrientationChanged(true);
-        }
-
-        private void HandleOrientationChanged(bool updatePreviewStreamRequired)
-        {
-            var handler = OrientationChanged;
-            if (handler != null)
-            {
-                handler(this, updatePreviewStreamRequired);
-            }
-        }
-
-        public static bool IsEnclosureLocationExternal(EnclosureLocation enclosureLocation)
-        {
-            return (enclosureLocation == null || enclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Unknown);
-        }
-
-        private bool IsCameraMirrored()
-        {
-            // Front panel cameras are mirrored by default
-            return (_cameraEnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front);
-        }
-
-        private SimpleOrientation GetCameraOrientationRelativeToNativeOrientation()
-        {
-            // Get the rotation angle of the camera enclosure
-            var enclosureAngle = ConvertClockwiseDegreesToSimpleOrientation((int)_cameraEnclosureLocation.RotationAngleInDegreesClockwise);
-
-            // Account for the fact that, on portrait-first devices, the built in camera sensor is read at a 90 degree offset to the native orientation
-            if (_displayInformation.NativeOrientation == DisplayOrientations.Portrait && !IsEnclosureLocationExternal(_cameraEnclosureLocation))
-            {
-                return AddOrientations(SimpleOrientation.Rotated90DegreesCounterclockwise, enclosureAngle);
-            }
-            else
-            {
-                return AddOrientations(SimpleOrientation.NotRotated, enclosureAngle);
-            }
-        }
-
-        // Gets the rotation to rotate ui elements
-        public SimpleOrientation GetUIOrientation()
-        {
-            if (IsEnclosureLocationExternal(_cameraEnclosureLocation))
-            {
-                // Cameras that are not attached to the device do not rotate along with it, so apply no rotation
-                return SimpleOrientation.NotRotated;
-            }
-
-            // Return the difference between the orientation of the device and the orientation of the app display
-            var deviceOrientation = _orientationSensor.GetCurrentOrientation();
-            var displayOrientation = ConvertDisplayOrientationToSimpleOrientation(_displayInformation.CurrentOrientation);
-            return SubOrientations(displayOrientation, deviceOrientation);
-        }
-
-        // Gets the rotation of the camera to rotate pictures/videos when saving to file
-        public SimpleOrientation GetCameraCaptureOrientation()
-        {
-            if (IsEnclosureLocationExternal(_cameraEnclosureLocation))
-            {
-                // Cameras that are not attached to the device do not rotate along with it, so apply no rotation
-                return SimpleOrientation.NotRotated;
-            }
-
-            // Get the device orienation offset by the camera hardware offset
-            var deviceOrientation = _orientationSensor.GetCurrentOrientation();
-            var result = SubOrientations(deviceOrientation, GetCameraOrientationRelativeToNativeOrientation());
-
-            // If the preview is being mirrored for a front-facing camera, then the rotation should be inverted
-            if (IsCameraMirrored())
-            {
-                result = MirrorOrientation(result);
-            }
-            return result;
-        }
-
-        // Gets the rotation of the camera to display the camera preview
-        public SimpleOrientation GetCameraPreviewOrientation()
-        {
-            if (IsEnclosureLocationExternal(_cameraEnclosureLocation))
-            {
-                // Cameras that are not attached to the device do not rotate along with it, so apply no rotation
-                return SimpleOrientation.NotRotated;
-            }
-
-            // Get the app display rotation offset by the camera hardware offset
-            var result = ConvertDisplayOrientationToSimpleOrientation(_displayInformation.CurrentOrientation);
-            result = SubOrientations(result, GetCameraOrientationRelativeToNativeOrientation());
-
-            // If the preview is being mirrored for a front-facing camera, then the rotation should be inverted
-            if (IsCameraMirrored())
-            {
-                result = MirrorOrientation(result);
-            }
-            return result;
-        }
-
-        public static PhotoOrientation ConvertSimpleOrientationToPhotoOrientation(SimpleOrientation orientation)
-        {
-            switch (orientation)
-            {
-                case SimpleOrientation.Rotated90DegreesCounterclockwise:
-                    return PhotoOrientation.Rotate90;
-                case SimpleOrientation.Rotated180DegreesCounterclockwise:
-                    return PhotoOrientation.Rotate180;
-                case SimpleOrientation.Rotated270DegreesCounterclockwise:
-                    return PhotoOrientation.Rotate270;
-                case SimpleOrientation.NotRotated:
-                default:
-                    return PhotoOrientation.Normal;
-            }
-        }
-
-        public static int ConvertSimpleOrientationToClockwiseDegrees(SimpleOrientation orientation)
-        {
-            switch (orientation)
-            {
-                case SimpleOrientation.Rotated90DegreesCounterclockwise:
-                    return 270;
-                case SimpleOrientation.Rotated180DegreesCounterclockwise:
-                    return 180;
-                case SimpleOrientation.Rotated270DegreesCounterclockwise:
-                    return 90;
-                case SimpleOrientation.NotRotated:
-                default:
-                    return 0;
-            }
-        }
-
-        private SimpleOrientation ConvertDisplayOrientationToSimpleOrientation(DisplayOrientations orientation)
-        {
-            SimpleOrientation result;
-            switch (orientation)
-            {
-                case DisplayOrientations.Landscape:
-                    result = SimpleOrientation.NotRotated;
-                    break;
-                case DisplayOrientations.PortraitFlipped:
-                    result = SimpleOrientation.Rotated90DegreesCounterclockwise;
-                    break;
-                case DisplayOrientations.LandscapeFlipped:
-                    result = SimpleOrientation.Rotated180DegreesCounterclockwise;
-                    break;
-                case DisplayOrientations.Portrait:
-                default:
-                    result = SimpleOrientation.Rotated270DegreesCounterclockwise;
-                    break;
-            }
-
-            // Above assumes landscape; offset is needed if native orientation is portrait
-            if (_displayInformation.NativeOrientation == DisplayOrientations.Portrait)
-            {
-                result = AddOrientations(result, SimpleOrientation.Rotated90DegreesCounterclockwise);
-            }
-
-            return result;
-        }
-
-        private static SimpleOrientation MirrorOrientation(SimpleOrientation orientation)
-        {
-            // This only affects the 90 and 270 degree cases, because rotating 0 and 180 degrees is the same clockwise and counter-clockwise
-            switch (orientation)
-            {
-                case SimpleOrientation.Rotated90DegreesCounterclockwise:
-                    return SimpleOrientation.Rotated270DegreesCounterclockwise;
-                case SimpleOrientation.Rotated270DegreesCounterclockwise:
-                    return SimpleOrientation.Rotated90DegreesCounterclockwise;
-            }
-            return orientation;
-        }
-
-        private static SimpleOrientation AddOrientations(SimpleOrientation a, SimpleOrientation b)
-        {
-            var aRot = ConvertSimpleOrientationToClockwiseDegrees(a);
-            var bRot = ConvertSimpleOrientationToClockwiseDegrees(b);
-            var result = (aRot + bRot) % 360;
-            return ConvertClockwiseDegreesToSimpleOrientation(result);
-        }
-
-        private static SimpleOrientation SubOrientations(SimpleOrientation a, SimpleOrientation b)
-        {
-            var aRot = ConvertSimpleOrientationToClockwiseDegrees(a);
-            var bRot = ConvertSimpleOrientationToClockwiseDegrees(b);
-            //add 360 to ensure the modulus operator does not operate on a negative
-            var result = (360 + (aRot - bRot)) % 360;
-            return ConvertClockwiseDegreesToSimpleOrientation(result);
-        }
-
-        private static VideoRotation ConvertSimpleOrientationToVideoRotation(SimpleOrientation orientation)
-        {
-            switch (orientation)
-            {
-                case SimpleOrientation.Rotated90DegreesCounterclockwise:
-                    return VideoRotation.Clockwise270Degrees;
-                case SimpleOrientation.Rotated180DegreesCounterclockwise:
-                    return VideoRotation.Clockwise180Degrees;
-                case SimpleOrientation.Rotated270DegreesCounterclockwise:
-                    return VideoRotation.Clockwise90Degrees;
-                case SimpleOrientation.NotRotated:
-                default:
-                    return VideoRotation.None;
-            }
-        }
-
-        private static SimpleOrientation ConvertClockwiseDegreesToSimpleOrientation(int orientation)
-        {
-            switch (orientation)
-            {
-                case 270:
-                    return SimpleOrientation.Rotated90DegreesCounterclockwise;
-                case 180:
-                    return SimpleOrientation.Rotated180DegreesCounterclockwise;
-                case 90:
-                    return SimpleOrientation.Rotated270DegreesCounterclockwise;
-                case 0:
-                default:
-                    return SimpleOrientation.NotRotated;
-            }
-        }
-    }
-    */
 }

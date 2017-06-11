@@ -536,7 +536,6 @@ D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.XDocument.dll
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.XmlDocument.dll
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\bin\x86\Debug\System.Xml.XmlSerializer.dll
-D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.csprojResolveAssemblyReference.cache
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\App.g.i.cs
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\App.g.cs
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\MainPage.g.i.cs

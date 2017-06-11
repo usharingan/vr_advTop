@@ -43,7 +43,9 @@
                     <Button Name="CameraSnapshotButton" Content="Take Snapshot" Click="CameraSnapshotButton_Click" Margin="10, 0, 10, 0" IsEnabled="False"/>
                 </StackPanel>
 
-                <CaptureElement Name="CamPreview" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" Margin="0,10,0,0" />
+                <CaptureElement Name="CamPreview" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" Margin="0,10,0,0">
+                   
+                </CaptureElement>
                 <Canvas Name="VisualizationCanvas" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,10,0,0" />
             </Grid>
 
