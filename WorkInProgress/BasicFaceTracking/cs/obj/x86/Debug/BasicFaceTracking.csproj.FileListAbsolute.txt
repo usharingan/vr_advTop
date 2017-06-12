@@ -620,3 +620,4 @@ D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\qualifiers.txt.intermediate
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\ProjectArchitectures.txt
+D:\Uni_Master_SS2017\vr_advTop\WorkInProgress\BasicFaceTracking\cs\obj\x86\Debug\BasicFaceTracking.csprojResolveAssemblyReference.cache

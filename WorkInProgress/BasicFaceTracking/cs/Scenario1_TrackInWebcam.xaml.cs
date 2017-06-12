@@ -216,18 +216,11 @@ namespace SDKTemplate
             try
             {
                 this.mediaCapture = new MediaCapture();
-
-                // For this scenario, we only need Video (not microphone) so specify this in the initializer.
-                // NOTE: the appxmanifest only declares "webcam" under capabilities and if this is changed to include
-                // microphone (default constructor) you must add "microphone" to the manifest or initialization will fail.
-//
                 MediaCaptureInitializationSettings settings = new MediaCaptureInitializationSettings();
                 settings.StreamingCaptureMode = StreamingCaptureMode.Video;
                 
                 await this.mediaCapture.InitializeAsync(settings);
-      //          this.mediaCapture.RecordLimitationExceeded += MediaCapture_RecordLimitationExceeded;
                 this.mediaCapture.Failed += this.MediaCapture_CameraStreamFailed;
-            //  this.mediaCapture.CameraStreamStateChanged += this.MediaCapture_CameraStreamStateChanged;
 
                 // Cache the media properties as we'll need them later.
                 var deviceController = this.mediaCapture.VideoDeviceController;
@@ -262,7 +255,7 @@ namespace SDKTemplate
                 successful = false;
             }
 
-            
+
 
             return successful;
         }
@@ -459,7 +452,19 @@ namespace SDKTemplate
                 // Sort faces according to their X position
                 foundFaces = foundFaces.OrderBy(face => face.FaceBox.X).ToList();
 
-                // TeST
+                if (!firstFrame) {
+                    faceIDsCurrFrame = getCorrectFaceIds(foundFaces, facesPrevFrame, faceIDsPrevFrame, frameCounter);
+                }
+                if (firstFrame) {
+                    faceIDsCurrFrame = new int[foundFaces.Count];
+                    faceIDsPrevFrame = new int[foundFaces.Count];
+                    for (int i = 0; i < foundFaces.Count; i++)
+                    {
+                        faceIDsCurrFrame[i] = i;
+                        faceIDsPrevFrame[i] = i;
+                    }
+                }
+  /*              // TeST
                 if (firstFrame) {
                     faceIDsCurrFrame = new int[foundFaces.Count];
                     faceIDsPrevFrame = new int[foundFaces.Count];
@@ -469,15 +474,18 @@ namespace SDKTemplate
                     }
                 }
                 else {
-                    faceIDsCurrFrame = getCorrectFaceIds(foundFaces, facesPrevFrame, faceIDsPrevFrame, frameCounter/*, faceMovementDirection*/);
-                }
+                    faceIDsCurrFrame = getCorrectFaceIds(foundFaces, facesPrevFrame, faceIDsPrevFrame, frameCounter);
+
+                    //test
+                    if (faceIDsCurrFrame.Length == 0) {
+
+                    }
+                }*/
                 int count = 0;
 
                 foreach (DetectedFace face in foundFaces)
                 {
-                    // TeST
-                    //
-                    if (frameCounter == 0)
+                    if (frameCounter%30 == 0) //if (frameCounter == 0)
                     {
                         position30framesAgo = new Vector2(face.FaceBox.X, face.FaceBox.Y);
                     } 
@@ -495,15 +503,10 @@ namespace SDKTemplate
 
                     this.VisualizationCanvas.Children.Add(box);
 
-                    // TEST
-      //              System.Diagnostics.Debug.WriteLine("x Position, FaceBox (int): " + face.FaceBox.X );
-      //              System.Diagnostics.Debug.WriteLine("x Position, FaceBox (float): " + (float)face.FaceBox.X);
-
-
                     // Index of faces - Visualization: starting from 0, from left to right
                     TextBlock txtBlock = new TextBlock();
                     txtBlock.FontSize = 18;
-                    txtBlock.Text = "" + faceIDsCurrFrame[count];  // TODO! - replace
+                    txtBlock.Text = "" + faceIDsCurrFrame[count]; 
                     txtBlock.Foreground = new SolidColorBrush(Windows.UI.Colors.Red);
                     txtBlock.Width = (uint)(face.FaceBox.Width / widthScale);
                     txtBlock.Height = (uint)(face.FaceBox.Height / heightScale);
@@ -511,28 +514,30 @@ namespace SDKTemplate
                     txtBlock.Margin = new Thickness((uint)(face.FaceBox.X / widthScale), (uint)(face.FaceBox.Y / heightScale), 0, 0);
                     this.VisualizationCanvas.Children.Add(txtBlock);
 
-                    count++; // TODO! - replace   
+                    count++; 
                 }
-                //TeST
                 facesPrevFrame = foundFaces;
                 faceIDsPrevFrame = faceIDsCurrFrame;
 
-                // TEST
-          /*      System.Diagnostics.Debug.WriteLine("ids current frame: ");
-                for (int l = 0; l < faceIDsCurrFrame.Length; l++)
-                {
-                    System.Diagnostics.Debug.WriteLine(faceIDsCurrFrame[l]);
-                }*/
-
                 firstFrame = false;
             }
-
             frameCounter++;
         }
 
+
+        // direction accumulation solution with CAP - more reliable than single vector from frame to frame
+        private float directionAccumulation = 0;
+        private float CAP = 30;
+
         // Self-written Algorithm, for unique ID allocation
-        private int[] getCorrectFaceIds(IList<DetectedFace> foundFaces, IList<DetectedFace> facesPrevFrame, int[] faceIDsPrevFrame, int frameCounter/*, Vector2 faceMoveDir*/) {
+        private int[] getCorrectFaceIds(IList<DetectedFace> foundFaces, IList<DetectedFace> facesPrevFrame, int[] faceIDsPrevFrame, int frameCounter) {
             int[] currectFaceIDs = new int[foundFaces.Count];
+
+            if(foundFaces.Count == 0)
+            {
+                firstFrame = true;
+                return currectFaceIDs;
+            }
 
             // same number of faces
             if (foundFaces.Count == facesPrevFrame.Count) {
@@ -540,12 +545,23 @@ namespace SDKTemplate
                 {
                     faceMovementDirection = Vector2.Subtract(new Vector2(foundFaces[0].FaceBox.X, foundFaces[0].FaceBox.Y),
                                                              new Vector2(facesPrevFrame[0].FaceBox.X, facesPrevFrame[0].FaceBox.Y));
+                    
+                    directionAccumulation += faceMovementDirection.X;
+                    if(directionAccumulation < -CAP)
+                    {
+                        directionAccumulation = -CAP;
+                    }
+                    if(directionAccumulation > CAP)
+                    {
+                        directionAccumulation = CAP;
+                    }
+                    //System.Diagnostics.Debug.WriteLine("directionAccumulation: " + directionAccumulation
 
-                    if (frameCounter % 15 == 0)
+                    if (frameCounter % 5 == 0)
                     {
                         faceMovementDirection30framesAgo = Vector2.Subtract(new Vector2(foundFaces[0].FaceBox.X, foundFaces[0].FaceBox.Y),
                                                                             position30framesAgo);
-                        System.Diagnostics.Debug.WriteLine("faceMovementDirection30framesAgo: " + faceMovementDirection30framesAgo);
+                       // System.Diagnostics.Debug.WriteLine("faceMovementDirection30framesAgo: " + faceMovementDirection30framesAgo);
 
                         position30framesAgo = new Vector2(foundFaces[0].FaceBox.X, foundFaces[0].FaceBox.Y);
                     }
@@ -559,27 +575,42 @@ namespace SDKTemplate
 
                 // faces bewegen sich nach links
                 // Camera bewegt sich nach rechts
-                if (faceMovementDirection.X < 0 || faceMovementDirection30framesAgo.X < 0)
+               // if (faceMovementDirection.X < 0 || faceMovementDirection30framesAgo.X < 0)
+                if (directionAccumulation < 0)
                 {
-                    // erste ID aus der letzten Frame holen
-                    int k = faceIDsPrevFrame[0];
-                    for (int j = 0; j < foundFaces.Count; j++)
-                    { // Itearion durch alle neu hinzugefuegten faces
-
-                        // TEST
-                //        System.Diagnostics.Debug.WriteLine("K: "+k);
-
-                        currectFaceIDs[j] = k++;
+                    if (faceIDsPrevFrame.Length != 0)
+                    {
+                        // erste ID aus der letzten Frame holen
+                        int k = faceIDsPrevFrame[0];
+                        for (int j = 0; j < foundFaces.Count; j++)
+                        { // Itearion durch alle neu hinzugefuegten faces
+                            currectFaceIDs[j] = k++;
+                        }
+                    }
+                    else {
+                        for (int j = 0; j < foundFaces.Count; j++) {
+                            currectFaceIDs[j] = j;
+                        }
                     }
                 }
                 // faces bewegen sich nach rechts
                 // Camera bewegt sich nach links
-                else if (faceMovementDirection.X > 0 || faceMovementDirection30framesAgo.X > 0) {
-                    // die erste vergeben ID des letzten Frames holen
-                    int k = faceIDsPrevFrame[0];
-                    k = k - (foundFaces.Count - facesPrevFrame.Count);
-                    for (int j = 0; j < foundFaces.Count; j++) {
-                        currectFaceIDs[j] = k++;
+                //else if (faceMovementDirection.X > 0 || faceMovementDirection30framesAgo.X > 0) {
+                else if (directionAccumulation > 0) {
+                    if (faceIDsPrevFrame.Length != 0)
+                    {
+                        // die erste vergeben ID des letzten Frames holen
+                        int k = faceIDsPrevFrame[0];
+                        k = k - (foundFaces.Count - facesPrevFrame.Count);
+                        for (int j = 0; j < foundFaces.Count; j++)
+                        {
+                            currectFaceIDs[j] = k++;
+                        }
+                    }
+                    else {
+                        for (int j = 0; j < foundFaces.Count; j++) {
+                            currectFaceIDs[j] = j;
+                        }
                     }
                 }
             }
@@ -587,7 +618,8 @@ namespace SDKTemplate
             else if (foundFaces.Count < facesPrevFrame.Count) {
                 // faces bewegen sich nach links
                 // Camera bewegt sich nach rechts
-                if (faceMovementDirection.X < 0 || faceMovementDirection30framesAgo.X < 0)
+               // if (faceMovementDirection.X < 0 || faceMovementDirection30framesAgo.X < 0)
+                if (directionAccumulation < 0)
                 {
                     // die erste in dieser Frame nicht weggeschnittene ID aus dem letzten Frame holen
                     int k = faceIDsPrevFrame[facesPrevFrame.Count - foundFaces.Count];
@@ -597,7 +629,8 @@ namespace SDKTemplate
                 }
                 // faces bewegen sich nach rechts
                 // Camera bewegt sich nach links
-                else if (faceMovementDirection.X > 0 || faceMovementDirection30framesAgo.X > 0) {
+                // else if (faceMovementDirection.X > 0 || faceMovementDirection30framesAgo.X > 0)  {
+                else if (directionAccumulation > 0) {
                     // die erste vergeben ID des letzten Frames holen
                     int k = faceIDsPrevFrame[0];
                     for (int j = 0; j < foundFaces.Count; j++) {
