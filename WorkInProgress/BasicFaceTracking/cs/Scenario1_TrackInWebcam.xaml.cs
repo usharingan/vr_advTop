@@ -464,28 +464,11 @@ namespace SDKTemplate
                         faceIDsPrevFrame[i] = i;
                     }
                 }
-  /*              // TeST
-                if (firstFrame) {
-                    faceIDsCurrFrame = new int[foundFaces.Count];
-                    faceIDsPrevFrame = new int[foundFaces.Count];
-                    for (int i = 0; i < foundFaces.Count; i++) {
-                        faceIDsCurrFrame[i] = i;
-                        faceIDsPrevFrame[i] = i;
-                    }
-                }
-                else {
-                    faceIDsCurrFrame = getCorrectFaceIds(foundFaces, facesPrevFrame, faceIDsPrevFrame, frameCounter);
-
-                    //test
-                    if (faceIDsCurrFrame.Length == 0) {
-
-                    }
-                }*/
                 int count = 0;
 
                 foreach (DetectedFace face in foundFaces)
                 {
-                    if (frameCounter%30 == 0) //if (frameCounter == 0)
+                    if (frameCounter%30 == 0) 
                     {
                         position30framesAgo = new Vector2(face.FaceBox.X, face.FaceBox.Y);
                     } 
@@ -901,6 +884,8 @@ namespace SDKTemplate
             string myLocalPath = ApplicationData.Current.LocalFolder.Path;
             string myScreenshotPath = System.IO.Path.Combine(myLocalPath, "Screenshots");
             StorageFolder myFolder = ApplicationData.Current.LocalFolder;
+            // temp
+            System.Diagnostics.Debug.WriteLine("Path to Screenshot Folder: " + myScreenshotPath);
             // Determine whether the directory exists
             if (!(Directory.Exists(myScreenshotPath)))
             {
@@ -928,7 +913,7 @@ namespace SDKTemplate
                                     pixels);
                 await encoder.FlushAsync();
             }
-            return file; // necessary?
+            return file;
         } 
     }
 
