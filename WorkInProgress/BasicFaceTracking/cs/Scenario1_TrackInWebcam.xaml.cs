@@ -488,7 +488,7 @@ namespace SDKTemplate
 
                     // Index of faces - Visualization: starting from 0, from left to right
                     TextBlock txtBlock = new TextBlock();
-                    txtBlock.FontSize = 18;
+                    txtBlock.FontSize = 30;
                     txtBlock.Text = "" + faceIDsCurrFrame[count]; 
                     txtBlock.Foreground = new SolidColorBrush(Windows.UI.Colors.Red);
                     txtBlock.Width = (uint)(face.FaceBox.Width / widthScale);

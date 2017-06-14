@@ -9,7 +9,7 @@
     <UseEmulator>false</UseEmulator>
     <RemoteDebugMachine>128.131.201.91</RemoteDebugMachine>
     <AuthenticationMode>Universal</AuthenticationMode>
-    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <RemoteDebugEnabled>true</RemoteDebugEnabled>
     <CreateCleanLayout>false</CreateCleanLayout>
   </PropertyGroup>
 </Project>
